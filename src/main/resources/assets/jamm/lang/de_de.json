@@ -1,0 +1,19 @@
+{
+  "item.jamm.amethyst": "Amethyst",
+  "item.jamm.amethyst_wand": "Amethystzauberstab",
+  "item.jamm.dark_amethyst": "Dunkler Amethyst",
+  "item.jamm.dowsing_rod": "Wünschelrute",
+
+  "block.jamm.amethyst_block": "Amethystblock",
+  "block.jamm.amethyst_ore": "Amethysterz",
+  "block.jamm.astral_altar": "Astraler Altar",
+  "block.jamm.dark_amethyst_ore": "Dunkles Amethysterz",
+  "block.jamm.lunar_altar": "Lunarer Altar",
+  "block.jamm.status_block": "Statusblock",
+  "block.jamm.template_altar": "Altarvorlage",
+
+  "itemGroup.jamm.jamm": "Jamm",
+
+
+  "tooltip.item.jamm.dowsing_rod": "Erkennt magische Wertsachen unter einem angeklickten Block"
+}

@@ -1,0 +1,20 @@
+{
+  "item.jamm.amethyst": "Amethyst",
+  "item.jamm.amethyst_wand": "Amethyst Wand",
+  "item.jamm.dark_amethyst": "Dark Amethyst",
+  "item.jamm.dark_amethyst_wand": "Dark Amethyst Wand",
+  "item.jamm.dowsing_rod": "Dowsing Rod",
+
+  "block.jamm.amethyst_block": "Amethyst Block",
+  "block.jamm.amethyst_ore": "Amethyst Ore",
+  "block.jamm.astral_altar": "Astral Altar",
+  "block.jamm.dark_amethyst_ore": "Dark Amethyst Ore",
+  "block.jamm.lunar_altar": "Lunar Altar",
+  "block.jamm.status_block": "Status Block",
+  "block.jamm.template_altar": "Template Altar",
+
+  "itemGroup.jamm.jamm": "Jamm",
+
+
+  "tooltip.item.jamm.dowsing_rod": "Detects magical valuables below a clicked block"
+}

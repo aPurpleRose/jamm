@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "DBD",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "jamm:amethyst"
+    },
+    "B": {
+      "item": "jamm:template_altar"
+    },
+    "C": {
+      "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "minecraft:red_wool"
+    }
+  },
+  "result": {
+    "item": "jamm:lunar_altar"
+  }
+}

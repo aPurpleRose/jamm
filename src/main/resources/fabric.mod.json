@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "jamm",
+  "version": "${version}",
+
+  "name": "Just Another Magic Mod",
+  "description": "just another magic mod",
+  "authors": [
+    "PurpleRose"
+  ],
+
+  "license": "MIT",
+  "icon": "assets/jamm/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.purple_rose.jamm.Jamm"
+    ]
+  },
+  "mixins": [
+    "jamm.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
