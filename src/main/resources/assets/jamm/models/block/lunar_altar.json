@@ -1,9 +1,8 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
 		"1": "jamm:block/lunar_altar_black",
 		"2": "jamm:block/lunar_altar_top",
-		"3": "jamm:block/lunar_altarh_up_ring",
+		"3": "jamm:block/lunar_altar_up_ring",
 		"particle": "jamm:block/lunar_altar_top"
 	},
 	"elements": [
