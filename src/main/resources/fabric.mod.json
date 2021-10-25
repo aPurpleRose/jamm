@@ -16,6 +16,9 @@
   "entrypoints": {
     "main": [
       "net.purple_rose.jamm.Jamm"
+    ],
+    "client": [
+      "net.purple_rose.jamm.JammClient"
     ]
   },
   "mixins": [

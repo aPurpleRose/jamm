@@ -26,7 +26,7 @@ public class LunarAltarEntity extends BlockEntity {
         number = nbt.getInt("number");
     }
 
-    public static void tick(World world, BlockPos pos, BlockState state, LunarAltarEntity lwe){
-        lwe.number++;
+    public static void tick(World world, BlockPos pos, BlockState state, LunarAltarEntity lae){
+
     }
 }

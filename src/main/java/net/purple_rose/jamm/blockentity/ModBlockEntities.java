@@ -11,7 +11,7 @@ import net.purple_rose.jamm.block.ModBlocks;
 public class ModBlockEntities {
 
     public static final BlockEntityType<?> LUNAR_ALTAR_ENTITY = FabricBlockEntityTypeBuilder.create(LunarAltarEntity::new, ModBlocks.LUNAR_ALTAR).build(null);
-
+    public static final BlockEntityType<?> ASTRAL_ALTAR_ENTITY = FabricBlockEntityTypeBuilder.create(AstralAltarEntity::new, ModBlocks.ASTRAL_ALTAR).build(null);
 
 
     public static void registerBlockEntities(){

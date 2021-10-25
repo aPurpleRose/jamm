@@ -4,8 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.purple_rose.jamm.block.ModBlocks;
 import net.purple_rose.jamm.blockentity.ModBlockEntities;
 import net.purple_rose.jamm.item.ModItems;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import net.purple_rose.jamm.screen.ModScreenHandlers;
 
 public class Jamm implements ModInitializer {
 
@@ -20,6 +19,7 @@ public class Jamm implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerModScreenHandlers();
 
 		System.out.println("Hello Fabric world!");
 	}
