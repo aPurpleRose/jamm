@@ -1,4 +1,4 @@
-package net.purple_rose.jamm.screen;
+package net.purple_rose.jamm.gui.handler;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -8,15 +8,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
-public class AstralAltarScreenHandler extends ScreenHandler {
+public class AstralAltarHandler extends ScreenHandler {
     private final Inventory inventory;
 
-    public AstralAltarScreenHandler(int syncId, PlayerInventory playerInventory) {
+    public AstralAltarHandler(int syncId, PlayerInventory playerInventory) {
         this(syncId, playerInventory, new SimpleInventory(9));
     }
 
-    public AstralAltarScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        super(ModScreenHandlers.ASTRAL_ALTAR_SCREEN_HANDLER, syncId);
+    public AstralAltarHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+        super(JammHandlers.ASTRAL_ALTAR, syncId);
         checkSize(inventory, 9);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);

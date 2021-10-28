@@ -1,4 +1,4 @@
-package net.purple_rose.jamm.screen;
+package net.purple_rose.jamm.gui.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;

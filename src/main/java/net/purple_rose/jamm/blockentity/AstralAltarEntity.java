@@ -13,7 +13,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.purple_rose.jamm.screen.AstralAltarScreenHandler;
+import net.purple_rose.jamm.gui.handler.AstralAltarHandler;
 import net.purple_rose.jamm.inventory.ImplementedInventory;
 
 
@@ -31,7 +31,7 @@ public class AstralAltarEntity extends BlockEntity implements NamedScreenHandler
 
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new AstralAltarScreenHandler(syncId, inv, this);
+        return new AstralAltarHandler(syncId, inv, this);
     }
 
     @Override
