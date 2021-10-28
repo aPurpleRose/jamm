@@ -1,12 +1,11 @@
 package net.purple_rose.jamm.block.custom;
 
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.text.LiteralText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
@@ -17,7 +16,7 @@ import net.purple_rose.jamm.blockentity.AstralAltarEntity;
 
 
 public class AstralAltarBlock extends BlockWithEntity {
-    protected AstralAltarBlock(Settings settings){
+    public AstralAltarBlock(Settings settings){
         super(settings);
     }
 
@@ -39,7 +38,10 @@ public class AstralAltarBlock extends BlockWithEntity {
 
             if(screenHandlerFactory != null){
                 player.openHandledScreen(screenHandlerFactory);
+                player.sendMessage(new LiteralText("success"), false);
             }
+            player.sendMessage(new LiteralText("tried"), false);
+
         }
         return ActionResult.SUCCESS;
     }

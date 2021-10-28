@@ -18,6 +18,7 @@ public class ModBlockEntities {
         System.out.println("Registering Mod Block Entities for " + Jamm.MOD_ID);
 
         register("lunar_altar", LUNAR_ALTAR_ENTITY);
+        register("astral_altar", ASTRAL_ALTAR_ENTITY);
     }
 
     private static void register(String name, BlockEntityType<? extends BlockEntity> blockEntity){

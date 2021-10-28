@@ -30,7 +30,7 @@ public class ModItems {
         return Registry.register(Registry.ITEM, new Identifier(Jamm.MOD_ID, name), item);
     }
 
-    public static void registerModItems(){
+    public static void registerItems(){
         System.out.println("Registering Mod Items for " + Jamm.MOD_ID);
     }
 }

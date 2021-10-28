@@ -10,6 +10,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.purple_rose.jamm.Jamm;
+import net.purple_rose.jamm.block.custom.AstralAltarBlock;
+import net.purple_rose.jamm.block.custom.LunarAltarBlock;
 import net.purple_rose.jamm.block.custom.StatusBlock;
 import net.purple_rose.jamm.block.custom.TemplateAltarBlock;
 import net.purple_rose.jamm.item.ModItemGroup;
@@ -23,9 +25,9 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f)
                     .breakByTool(FabricToolTags.PICKAXES, 2).requiresTool()));
     public static final Block ASTRAL_ALTAR = registerBlock("astral_altar",
-            new Block(FabricBlockSettings.of(Material.WOOD).strength(.5f)));
+            new AstralAltarBlock(FabricBlockSettings.of(Material.WOOD).strength(.5f)));
     public static final Block DARK_AMETHYST_ORE = registerBlock("dark_amethyst_ore",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f)
+            new LunarAltarBlock(FabricBlockSettings.of(Material.STONE).strength(4.0f)
                     .breakByTool(FabricToolTags.PICKAXES, 3).requiresTool()));
     public static final Block LUNAR_ALTAR = registerBlock("lunar_altar",
             new Block(FabricBlockSettings.of(Material.WOOD).strength(.5f).nonOpaque()));
@@ -46,7 +48,7 @@ public class ModBlocks {
         return Registry.register(Registry.ITEM, new Identifier(Jamm.MOD_ID, name), new BlockItem(block, new FabricItemSettings().group(ModItemGroup.JAMM)));
     }
 
-    public static void registerModBlocks(){
+    public static void registerBlocks(){
         System.out.println("Registering Mod Blocks for " + Jamm.MOD_ID);
     }
 }

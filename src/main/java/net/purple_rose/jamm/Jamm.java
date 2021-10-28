@@ -21,8 +21,8 @@ public class Jamm implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
+		ModItems.registerItems();
+		ModBlocks.registerBlocks();
 		ModBlockEntities.registerBlockEntities();
 		JammHandlers.registerHandlers();
 
