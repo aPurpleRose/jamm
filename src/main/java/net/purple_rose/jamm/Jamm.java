@@ -1,10 +1,9 @@
 package net.purple_rose.jamm;
 
 import net.fabricmc.api.ModInitializer;
-import net.purple_rose.jamm.block.ModBlocks;
-import net.purple_rose.jamm.blockentity.ModBlockEntities;
-import net.purple_rose.jamm.gui.screen.JammScreens;
-import net.purple_rose.jamm.item.ModItems;
+import net.purple_rose.jamm.block.JammBlocks;
+import net.purple_rose.jamm.blockentity.JammBlockEntities;
+import net.purple_rose.jamm.item.JammItems;
 import net.purple_rose.jamm.gui.handler.JammHandlers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,9 +20,9 @@ public class Jamm implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		ModItems.registerItems();
-		ModBlocks.registerBlocks();
-		ModBlockEntities.registerBlockEntities();
+		JammItems.registerItems();
+		JammBlocks.registerBlocks();
+		JammBlockEntities.registerBlockEntities();
 		JammHandlers.registerHandlers();
 
 		System.out.println("Hello Fabric world!");

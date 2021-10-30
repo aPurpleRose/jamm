@@ -12,7 +12,8 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.purple_rose.jamm.block.ModBlocks;
+import net.purple_rose.jamm.block.JammBlocks;
+import net.purple_rose.jamm.util.JammTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public class DowsingRodItem extends Item {
         super (settings);
     }
 
+    //might rework into a staff only working at night; might let it detect other valuables too when upgraded
     @Override
     public ActionResult useOnBlock(ItemUsageContext context){
         if(context.getWorld().isClient()){
@@ -55,7 +57,7 @@ public class DowsingRodItem extends Item {
     }
 
     private boolean isValuableBlock(Block block){
-        return block == ModBlocks.AMETHYST_ORE || block == ModBlocks.AMETHYST_BLOCK;
+        return block.getDefaultState().isIn(JammTags.Blocks.VALUABLE_BLOCKS);
     }
 
     private void outputValuableFound(Block blockFound, PlayerEntity player){

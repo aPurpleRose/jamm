@@ -6,7 +6,7 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.purple_rose.jamm.block.ModBlocks;
+import net.purple_rose.jamm.block.JammBlocks;
 
 public class DarkAmethystWandItem extends Item {
     public DarkAmethystWandItem(Settings settings) {
@@ -18,7 +18,7 @@ public class DarkAmethystWandItem extends Item {
         World world = context.getWorld();
         BlockPos blockPos = context.getBlockPos();
         BlockState blockState = world.getBlockState(blockPos);
-        if(blockState.isOf(ModBlocks.TEMPLATE_ALTAR)){
+        if(blockState.isOf(JammBlocks.TEMPLATE_ALTAR)){
 
         } else {
             return ActionResult.PASS;

@@ -9,7 +9,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.purple_rose.jamm.item.ModItems;
+import net.purple_rose.jamm.item.JammItems;
 
 public class TemplateAltarBlock extends Block {
     public TemplateAltarBlock(Settings settings) {
@@ -23,7 +23,7 @@ public class TemplateAltarBlock extends Block {
                 player.sendMessage(new LiteralText(player.getActiveItem().toString()), false);
             }
             //player.sendMessage(new LiteralText(player.getItemsHand().toString()),false);
-            if (player.getItemsHand() == ModItems.AMETHYST_WAND) {
+            if (player.getItemsHand() == JammItems.AMETHYST_WAND) {
                 player.sendMessage(new LiteralText("hi"),false);
             }
         }

@@ -14,9 +14,9 @@ import net.purple_rose.jamm.block.custom.AstralAltarBlock;
 import net.purple_rose.jamm.block.custom.LunarAltarBlock;
 import net.purple_rose.jamm.block.custom.StatusBlock;
 import net.purple_rose.jamm.block.custom.TemplateAltarBlock;
-import net.purple_rose.jamm.item.ModItemGroup;
+import net.purple_rose.jamm.item.JammItemGroup;
 
-public class ModBlocks {
+public class JammBlocks {
 
     public static final Block AMETHYST_ORE = registerBlock("amethyst_ore",
             new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f)
@@ -45,7 +45,7 @@ public class ModBlocks {
     }
 
     private static Item registerBlockItem(String name, Block block){
-        return Registry.register(Registry.ITEM, new Identifier(Jamm.MOD_ID, name), new BlockItem(block, new FabricItemSettings().group(ModItemGroup.JAMM)));
+        return Registry.register(Registry.ITEM, new Identifier(Jamm.MOD_ID, name), new BlockItem(block, new FabricItemSettings().group(JammItemGroup.JAMM)));
     }
 
     public static void registerBlocks(){

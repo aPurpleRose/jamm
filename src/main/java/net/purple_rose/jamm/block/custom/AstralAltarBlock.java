@@ -38,9 +38,7 @@ public class AstralAltarBlock extends BlockWithEntity {
 
             if(screenHandlerFactory != null){
                 player.openHandledScreen(screenHandlerFactory);
-                player.sendMessage(new LiteralText("success"), false);
             }
-            player.sendMessage(new LiteralText("tried"), false);
 
         }
         return ActionResult.SUCCESS;

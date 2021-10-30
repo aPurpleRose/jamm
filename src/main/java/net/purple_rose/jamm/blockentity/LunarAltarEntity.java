@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 public class LunarAltarEntity extends BlockEntity {
     public LunarAltarEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.LUNAR_ALTAR_ENTITY, pos, state);
+        super(JammBlockEntities.LUNAR_ALTAR_ENTITY, pos, state);
     }
 
     private int number = 0;

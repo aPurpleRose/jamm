@@ -6,12 +6,12 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.purple_rose.jamm.Jamm;
-import net.purple_rose.jamm.block.ModBlocks;
+import net.purple_rose.jamm.block.JammBlocks;
 
-public class ModBlockEntities {
+public class JammBlockEntities {
 
-    public static final BlockEntityType<?> LUNAR_ALTAR_ENTITY = FabricBlockEntityTypeBuilder.create(LunarAltarEntity::new, ModBlocks.LUNAR_ALTAR).build(null);
-    public static final BlockEntityType<?> ASTRAL_ALTAR_ENTITY = FabricBlockEntityTypeBuilder.create(AstralAltarEntity::new, ModBlocks.ASTRAL_ALTAR).build(null);
+    public static final BlockEntityType<?> LUNAR_ALTAR_ENTITY = FabricBlockEntityTypeBuilder.create(LunarAltarEntity::new, JammBlocks.LUNAR_ALTAR).build(null);
+    public static final BlockEntityType<?> ASTRAL_ALTAR_ENTITY = FabricBlockEntityTypeBuilder.create(AstralAltarEntity::new, JammBlocks.ASTRAL_ALTAR).build(null);
 
 
     public static void registerBlockEntities(){

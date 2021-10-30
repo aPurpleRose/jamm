@@ -10,20 +10,20 @@ import net.purple_rose.jamm.item.custom.DarkAmethystWandItem;
 import net.purple_rose.jamm.item.custom.DowsingRodItem;
 import net.purple_rose.jamm.item.custom.TutorialBookItem;
 
-public class ModItems {
+public class JammItems {
 
     public static final Item AMETHYST = registerItem("amethyst",
-            new Item(new FabricItemSettings().group(ModItemGroup.JAMM)));
+            new Item(new FabricItemSettings().group(JammItemGroup.JAMM)));
     public static final Item AMETHYST_WAND = registerItem("amethyst_wand",
-            new AmethystWandItem(new FabricItemSettings().group(ModItemGroup.JAMM).maxCount(1)));
+            new AmethystWandItem(new FabricItemSettings().group(JammItemGroup.JAMM).maxCount(1)));
     public static final Item DARK_AMETHYST = registerItem("dark_amethyst",
-            new Item(new FabricItemSettings().group(ModItemGroup.JAMM)));
+            new Item(new FabricItemSettings().group(JammItemGroup.JAMM)));
     public static final Item DARK_AMETHYST_WAND = registerItem("dark_amethyst_wand",
-            new DarkAmethystWandItem(new FabricItemSettings().group(ModItemGroup.JAMM).maxCount(1)));
+            new DarkAmethystWandItem(new FabricItemSettings().group(JammItemGroup.JAMM).maxCount(1)));
     public static final Item DOWSING_ROD = registerItem("dowsing_rod",
-            new DowsingRodItem(new FabricItemSettings().group(ModItemGroup.JAMM).maxDamage(10)));
+            new DowsingRodItem(new FabricItemSettings().group(JammItemGroup.JAMM).maxDamage(10)));
     public static final Item TUTORIAL_BOOK = registerItem("tutorial_book",
-            new TutorialBookItem(new FabricItemSettings().group(ModItemGroup.JAMM)));
+            new TutorialBookItem(new FabricItemSettings().group(JammItemGroup.JAMM)));
 
 
     private static Item registerItem(String name, Item item){

@@ -21,7 +21,7 @@ public class AstralAltarEntity extends BlockEntity implements NamedScreenHandler
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
     public AstralAltarEntity(BlockPos pos, BlockState state){
-        super(ModBlockEntities.ASTRAL_ALTAR_ENTITY, pos, state);
+        super(JammBlockEntities.ASTRAL_ALTAR_ENTITY, pos, state);
     }
 
     @Override
@@ -51,4 +51,9 @@ public class AstralAltarEntity extends BlockEntity implements NamedScreenHandler
         Inventories.writeNbt(nbt, this.inventory);
         return nbt;
     }
+
+
+
+    //item received with an empty hand right click, look at ItemFrameEntity, has to be adjusted
+
 }
