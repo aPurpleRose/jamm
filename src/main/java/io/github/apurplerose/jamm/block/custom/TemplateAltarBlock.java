@@ -21,8 +21,8 @@ public class TemplateAltarBlock extends BlockWithEntity {
             .strength(.5f)
             .nonOpaque();
 
-    public TemplateAltarBlock(Settings settings){
-        super(settings);
+    public TemplateAltarBlock(){
+        super(SETTINGS);
     }
 
     @Override
@@ -45,9 +45,4 @@ public class TemplateAltarBlock extends BlockWithEntity {
         return super.onUse(state, world, pos, player, hand, hit);
     }
 
-/*
-    @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return null;
-    }*/
 }

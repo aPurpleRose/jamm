@@ -13,8 +13,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.Set;
-
 public class AstralAltarBlock extends BlockWithEntity {
 
     private static final Settings SETTINGS = Settings
@@ -22,8 +20,8 @@ public class AstralAltarBlock extends BlockWithEntity {
             .strength(.5f)
             .nonOpaque();
 
-    public AstralAltarBlock(Settings settings){
-        super(settings);
+    public AstralAltarBlock(){
+        super(SETTINGS);
     }
 
     @Override

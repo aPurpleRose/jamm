@@ -2,8 +2,8 @@ package io.github.apurplerose.jamm.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Material;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -12,8 +12,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class StatusBlock extends Block {
-    public StatusBlock(Settings settings){
-        super (settings);
+
+    private static final Settings SETTINGS = Settings
+            .of(Material.STONE)
+            .strength(5.0f)
+            .requiresTool();
+
+    public StatusBlock(){
+        super (SETTINGS);
     }
 
     @Override
