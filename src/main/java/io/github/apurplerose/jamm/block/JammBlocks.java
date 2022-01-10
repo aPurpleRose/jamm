@@ -10,7 +10,6 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import io.github.apurplerose.jamm.block.custom.StatusBlock;
@@ -30,7 +29,7 @@ public class JammBlocks {
     // misc
     public static final Block AMETHYST_BLOCK = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).requiresTool());
     public static final Block STATUS_BLOCK = new StatusBlock();
-    
+
 
     public static Block register(String name, Block block){
         JammItems.register(name, new BlockItem(block, new FabricItemSettings().group(JammItemGroup.JAMM)));
