@@ -6,7 +6,7 @@
   "name": "Just Another Magic Mod",
   "description": "just another magic mod",
   "authors": [
-    "PurpleRose"
+    "aPurpleRose"
   ],
 
   "license": "MIT",
@@ -15,10 +15,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.purple_rose.jamm.Jamm"
+      "io.github.apurplerose.jamm.Jamm"
     ],
     "client": [
-      "net.purple_rose.jamm.JammClient"
+      "io.github.apurplerose.jamm.JammClient"
     ]
   },
   "mixins": [
@@ -26,7 +26,7 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.12.12",
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"

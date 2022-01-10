@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "jamm:amethyst_block",
+    "jamm:amethyst_ore",
+    "jamm:status_block"
+  ]
+}
