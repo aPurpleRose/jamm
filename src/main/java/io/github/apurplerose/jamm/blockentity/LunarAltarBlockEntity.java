@@ -7,26 +7,37 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class LunarAltarBlockEntity extends BlockEntity {
-    public LunarAltarBlockEntity(BlockPos pos, BlockState state) {
-        super(JammBlockEntities.LUNAR_ALTAR_ENTITY, pos, state);
-    }
 
-    private int number = 0;
+        private static int magic;
+        private static final int reqTicks = 20;
+        private static int ticks;
 
-    @Override
-    public NbtCompound writeNbt(NbtCompound nbt) {
-        super.writeNbt(nbt);
-        nbt.putInt("number", number);
-        return nbt;
-    }
+        public LunarAltarBlockEntity(BlockPos pos, BlockState state) {
+                super(JammBlockEntities.LUNAR_ALTAR, pos, state);
+        }
 
-    @Override
-    public void readNbt(NbtCompound nbt) {
-        super.readNbt(nbt);
-        number = nbt.getInt("number");
-    }
+        @Override
+        public NbtCompound writeNbt(NbtCompound nbt) {
+                super.writeNbt(nbt);
+                nbt.putInt("magic", magic);
+                return nbt;
+        }
 
-    public static void tick(World world, BlockPos pos, BlockState state, LunarAltarBlockEntity lae){
+        @Override
+        public void readNbt(NbtCompound nbt) {
+                super.readNbt(nbt);
+                magic = nbt.getInt("magic");
+        }
 
-    }
+        public static void tick(World world, BlockPos pos, BlockState state, LunarAltarBlockEntity lae) {
+                ticks += 1;
+                if (ticks > reqTicks) {
+                        ticks = 0;
+                        magic += 1;
+                }
+        }
+
+        public int getMagic() {
+                return magic;
+        }
 }

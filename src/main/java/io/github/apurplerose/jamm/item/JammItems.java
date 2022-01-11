@@ -31,10 +31,10 @@ public class JammItems {
                     new FabricItemSettings().group(JammItemGroup.JAMM));
 
     // custom items
-    public static final Item AMETHYST_WAND = new AmethystWandItem(new FabricItemSettings().group(JammItemGroup.JAMM).maxCount(1));
-    public static final Item DARK_AMETHYST_WAND = new DarkAmethystWandItem(new FabricItemSettings().group(JammItemGroup.JAMM).maxCount(1));
-    public static final Item DOWSING_ROD = new DowsingRodItem(new FabricItemSettings().group(JammItemGroup.JAMM).maxDamage(10));
-    public static final Item TUTORIAL_BOOK = new TutorialBookItem(new FabricItemSettings().group(JammItemGroup.JAMM));
+    public static final Item AMETHYST_WAND = new AmethystWandItem();
+    public static final Item DARK_AMETHYST_WAND = new DarkAmethystWandItem();
+    public static final Item DOWSING_ROD = new DowsingRodItem();
+    public static final Item TUTORIAL_BOOK = new TutorialBookItem();
 
 
     public static Item register(String name, Item item){

@@ -1,5 +1,7 @@
 package io.github.apurplerose.jamm.item.custom;
 
+import io.github.apurplerose.jamm.item.JammItemGroup;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,8 +21,13 @@ import java.util.List;
 import java.util.Objects;
 
 public class DowsingRodItem extends Item {
-    public DowsingRodItem(Settings settings){
-        super (settings);
+
+    private static final Settings SETTINGS = new FabricItemSettings()
+            .group(JammItemGroup.JAMM)
+            .maxCount(16);
+
+    public DowsingRodItem(){
+        super (SETTINGS);
     }
 
     //might rework into a staff only working at night; might let it detect other valuables too when upgraded

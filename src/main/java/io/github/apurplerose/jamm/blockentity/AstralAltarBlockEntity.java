@@ -21,7 +21,7 @@ public class AstralAltarBlockEntity extends BlockEntity implements NamedScreenHa
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
     public AstralAltarBlockEntity(BlockPos pos, BlockState state){
-        super(JammBlockEntities.ASTRAL_ALTAR_ENTITY, pos, state);
+        super(JammBlockEntities.ASTRAL_ALTAR, pos, state);
     }
 
     @Override

@@ -1,6 +1,8 @@
 package io.github.apurplerose.jamm.item.custom;
 
 import io.github.apurplerose.jamm.block.JammBlocks;
+import io.github.apurplerose.jamm.item.JammItemGroup;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
@@ -9,8 +11,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class DarkAmethystWandItem extends Item {
-    public DarkAmethystWandItem(Settings settings) {
-        super(settings);
+
+    private static final Settings SETTINGS = new FabricItemSettings()
+            .group(JammItemGroup.JAMM)
+            .maxCount(1);
+
+    public DarkAmethystWandItem() {
+        super(SETTINGS);
     }
 
     @Override

@@ -10,21 +10,21 @@ import io.github.apurplerose.jamm.block.JammBlocks;
 
 public class JammBlockEntities {
 
-    public static final BlockEntityType<?> LUNAR_ALTAR_ENTITY = FabricBlockEntityTypeBuilder.create(LunarAltarBlockEntity::new, JammBlocks.LUNAR_ALTAR).build(null);
-    public static final BlockEntityType<?> ASTRAL_ALTAR_ENTITY = FabricBlockEntityTypeBuilder.create(AstralAltarBlockEntity::new, JammBlocks.ASTRAL_ALTAR).build(null);
-    public static final BlockEntityType<?> TEMPLATE_ALTAR_ENTITY = FabricBlockEntityTypeBuilder.create(TemplateAltarBlockEntity::new, JammBlocks.TEMPLATE_ALTAR).build(null);
-    //so probably I need id instead? thats the difference between the both altars and only one is working
+        public static final BlockEntityType<?> ASTRAL_ALTAR = FabricBlockEntityTypeBuilder.create(AstralAltarBlockEntity::new, JammBlocks.ASTRAL_ALTAR).build(null);
+        public static final BlockEntityType<?> LUNAR_ALTAR = FabricBlockEntityTypeBuilder.create(LunarAltarBlockEntity::new, JammBlocks.LUNAR_ALTAR).build(null);
+        public static final BlockEntityType<?> TEMPLATE_ALTAR = FabricBlockEntityTypeBuilder.create(TemplateAltarBlockEntity::new, JammBlocks.TEMPLATE_ALTAR).build(null);
 
 
-    public static void registerBlockEntities(){
-        System.out.println("Registering Mod Block Entities for " + Jamm.MOD_ID);
+        private static void register(String name, BlockEntityType<? extends BlockEntity> blockEntity){
+                Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Jamm.MOD_ID, name), blockEntity);
+        }
 
-        register("lunar_altar", LUNAR_ALTAR_ENTITY);
-        register("astral_altar", ASTRAL_ALTAR_ENTITY);
-        register("template_altar", TEMPLATE_ALTAR_ENTITY);
-    }
+        public static void registerBlockEntities(){
+                System.out.println("Registering Mod Block Entities for " + Jamm.MOD_ID);
 
-    private static void register(String name, BlockEntityType<? extends BlockEntity> blockEntity){
-        Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(Jamm.MOD_ID, name), blockEntity);
-    }
+                register("astral_altar", ASTRAL_ALTAR);
+                register("lunar_altar", LUNAR_ALTAR);
+                register("template_altar", TEMPLATE_ALTAR);
+        }
+
 }
