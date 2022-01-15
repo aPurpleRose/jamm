@@ -7,7 +7,6 @@ import net.minecraft.block.Material;
 
 abstract public class AbstractAltarBlock extends BlockWithEntity {
 
-        public static final int TANK_SIZE = 100;
         public static final Settings SETTINGS = Settings
                 .of(Material.WOOD)
                 .strength(.5f)

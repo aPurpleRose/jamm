@@ -7,6 +7,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
 public class JammItemGroup {
-    public static final ItemGroup JAMM = FabricItemGroupBuilder.build(new Identifier(Jamm.MOD_ID, "jamm"),
-            () -> new ItemStack(JammItems.AMETHYST_WAND));
+        public static final ItemGroup JAMM = FabricItemGroupBuilder.build(new Identifier(Jamm.MOD_ID, "jamm"),
+                () -> new ItemStack(JammItems.AMETHYST_WAND));
 }

@@ -5,8 +5,8 @@ import net.minecraft.util.math.BlockPos;
 
 public class TemplateAltarBlockEntity extends AbstractAltarBlockEntity {
 
-    public TemplateAltarBlockEntity(BlockPos pos, BlockState state) {
-        super(JammBlockEntities.TEMPLATE_ALTAR, pos, state);
-    }
+        public TemplateAltarBlockEntity(BlockPos pos, BlockState state) {
+                super(JammBlockEntities.TEMPLATE_ALTAR, pos, state);
+        }
 
 }

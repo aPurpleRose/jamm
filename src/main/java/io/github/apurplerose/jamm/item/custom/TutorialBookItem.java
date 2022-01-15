@@ -6,13 +6,13 @@ import net.minecraft.item.WrittenBookItem;
 
 public class TutorialBookItem extends WrittenBookItem {
 
-    private static final Settings SETTINGS = new FabricItemSettings()
-            .group(JammItemGroup.JAMM)
-            .maxCount(1);
+        private static final Settings SETTINGS = new FabricItemSettings()
+                .group(JammItemGroup.JAMM)
+                .maxCount(1);
 
-    public TutorialBookItem() {
-        super(SETTINGS);
-    }
+        public TutorialBookItem() {
+                super(SETTINGS);
+        }
 
 
 

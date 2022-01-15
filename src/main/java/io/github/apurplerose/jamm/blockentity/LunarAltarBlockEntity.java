@@ -1,19 +1,20 @@
 package io.github.apurplerose.jamm.blockentity;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class LunarAltarBlockEntity extends BlockEntity {
+public class LunarAltarBlockEntity extends AbstractAltarBlockEntity {
 
-        private static int magic;
-        private static final int reqTicks = 20;
-        private static int ticks;
+        private int magic;
+        private static final int reqTicks = 30;
+        private int ticks;
+        public static final int MAX_MAGIC = 100;
 
         public LunarAltarBlockEntity(BlockPos pos, BlockState state) {
                 super(JammBlockEntities.LUNAR_ALTAR, pos, state);
+                magic = 0;
         }
 
         @Override
@@ -30,14 +31,21 @@ public class LunarAltarBlockEntity extends BlockEntity {
         }
 
         public static void tick(World world, BlockPos pos, BlockState state, LunarAltarBlockEntity lae) {
-                ticks += 1;
-                if (ticks > reqTicks) {
-                        ticks = 0;
-                        magic += 1;
+                if (lae.magic < MAX_MAGIC) {
+                        lae.ticks += 1;
+                        if (lae.ticks > reqTicks) {
+                                lae.ticks = 0;
+                                lae.magic += 1;
+                        }
                 }
         }
 
         public int getMagic() {
                 return magic;
         }
+        public void removeMagic(int magic1) {
+                magic -= magic1;
+        }
+
+
 }

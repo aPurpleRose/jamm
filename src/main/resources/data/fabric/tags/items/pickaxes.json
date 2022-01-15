@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "jamm:amethyst_pickaxe"
+    "jamm:amethyst_pickaxe",
+    "jamm:dark_amethyst_pickaxe"
   ]
 }

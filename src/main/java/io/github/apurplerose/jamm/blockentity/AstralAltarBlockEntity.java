@@ -18,42 +18,42 @@ import io.github.apurplerose.jamm.inventory.ImplementedInventory;
 
 
 public class AstralAltarBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
+        private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
-    public AstralAltarBlockEntity(BlockPos pos, BlockState state){
-        super(JammBlockEntities.ASTRAL_ALTAR, pos, state);
-    }
+        public AstralAltarBlockEntity(BlockPos pos, BlockState state){
+                super(JammBlockEntities.ASTRAL_ALTAR, pos, state);
+        }
 
-    @Override
-    public DefaultedList<ItemStack> getItems() {
-        return inventory;
-    }
+        @Override
+        public DefaultedList<ItemStack> getItems() {
+                return inventory;
+        }
 
-    @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new AstralAltarHandler(syncId, inv, this);
-    }
+        @Override
+        public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
+                return new AstralAltarHandler(syncId, inv, this);
+        }
 
-    @Override
-    public Text getDisplayName() {
-        return new TranslatableText(getCachedState().getBlock().getTranslationKey());
-    }
+        @Override
+        public Text getDisplayName() {
+                return new TranslatableText(getCachedState().getBlock().getTranslationKey());
+        }
 
-    @Override
-    public void readNbt(NbtCompound nbt) {
-        super.readNbt(nbt);
-        Inventories.readNbt(nbt, this.inventory);
-    }
+        @Override
+        public void readNbt(NbtCompound nbt) {
+                super.readNbt(nbt);
+                Inventories.readNbt(nbt, this.inventory);
+        }
 
-    @Override
-    public NbtCompound writeNbt(NbtCompound nbt) {
-        super.writeNbt(nbt);
-        Inventories.writeNbt(nbt, this.inventory);
-        return nbt;
-    }
+        @Override
+        public NbtCompound writeNbt(NbtCompound nbt) {
+                super.writeNbt(nbt);
+                Inventories.writeNbt(nbt, this.inventory);
+                return nbt;
+        }
 
 
 
-    //item received with an empty hand right click, look at ItemFrameEntity, has to be adjusted
+        //item received with an empty hand right click, look at ItemFrameEntity, has to be adjusted
 
 }
