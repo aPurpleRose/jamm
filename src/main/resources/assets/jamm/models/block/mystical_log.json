@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "jamm:block/mystical_log_top",
+    "side": "jamm:block/mystical_log"
+  }
+}

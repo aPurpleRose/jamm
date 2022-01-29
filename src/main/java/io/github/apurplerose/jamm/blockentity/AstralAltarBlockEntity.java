@@ -14,7 +14,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import io.github.apurplerose.jamm.gui.handler.AstralAltarHandler;
-import io.github.apurplerose.jamm.inventory.ImplementedInventory;
+import io.github.apurplerose.jamm.util.ImplementedInventory;
 
 
 public class AstralAltarBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {

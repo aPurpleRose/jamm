@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-
+    "jamm:status_block",
+    "jamm:test_block"
   ]
 }

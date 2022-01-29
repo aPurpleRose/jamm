@@ -4,9 +4,11 @@ import io.github.apurplerose.jamm.Jamm;
 import io.github.apurplerose.jamm.item.custom.*;
 import io.github.apurplerose.jamm.item.custom.armor.AmethystChestplateArmorItem;
 import io.github.apurplerose.jamm.item.custom.tool.*;
+import io.github.apurplerose.jamm.item.custom.wand.AmethystWandItem;
+import io.github.apurplerose.jamm.item.custom.wand.DarkAmethystWandItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -19,7 +21,7 @@ public class JammItems {
 
         // resources
         public static final Item AMETHYST = new Item(defaults());
-        public static final Item DARK_AMETHYST = new Item(defaults());
+        public static final Item DARK_AMETHYST = new DarkAmethystItem(defaults());
 
         // "complex" tools
         public static final Item AMETHYST_AXE = new ModAxeItem(JammToolMaterial.AMETHYST, 5.5f, -3.05f, defaults());
@@ -40,10 +42,11 @@ public class JammItems {
         public static final Item AMETHYST_LEGGINGS = new ArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.LEGS, defaults());
         public static final Item AMETHYST_BOOTS = new ArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.FEET, defaults());
 
-        public static final Item AGILITY_AMETHYST_CHESTPLATE = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.CHEST, defaults(),
-                new StatusEffect[]{StatusEffects.JUMP_BOOST, StatusEffects.SPEED});
-        public static final Item TANK_AMETHYST_CHESTPLATE = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_TANK, EquipmentSlot.CHEST, defaults(),
-                new StatusEffect[]{StatusEffects.RESISTANCE});
+        public static final Item AMETHYST_CHESTPLATE_AGILITY = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.CHEST, defaults(),
+                new StatusEffectInstance(StatusEffects.JUMP_BOOST, 20, 2, false, false),
+                new StatusEffectInstance(StatusEffects.SPEED, 20, 2, false, false));
+        public static final Item AMETHYST_CHESTPLATE_TANK = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_TANK, EquipmentSlot.CHEST, defaults(),
+                new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 2, false, false));
         /* plan:
          * armor gives effects like high jump and speed and ..., maybe a custom paranoia effect when the armor gives too much strong effects
          * in order to grant these effects, you have to insert amulets into the chestplate via crafting, maybe you can also get them back somehow
@@ -103,14 +106,16 @@ public class JammItems {
                 register("amethyst_boots", AMETHYST_BOOTS);
 
                 // special chestplate
-                register("agility_amethyst_chestplate", AGILITY_AMETHYST_CHESTPLATE);
-                register("tank_amethyst_chestplate", TANK_AMETHYST_CHESTPLATE);
+                register("amethyst_chestplate_agility", AMETHYST_CHESTPLATE_AGILITY);
+                register("amethyst_chestplate_tank", AMETHYST_CHESTPLATE_TANK);
 
                 // misc
                 register("amethyst_wand", AMETHYST_WAND);
                 register("dark_amethyst_wand", DARK_AMETHYST_WAND);
-                register("dowsing_rod", DOWSING_ROD);
                 register("tutorial_book", TUTORIAL_BOOK);
+
+                // tests
+                register("dowsing_rod", DOWSING_ROD);
         }
 
         public static Item.Settings defaults()

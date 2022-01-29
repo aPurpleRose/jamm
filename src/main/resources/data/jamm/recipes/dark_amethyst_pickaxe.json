@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    " A ",
+    " A "
+  ],
+  "key": {
+    "#": {
+      "item": "jamm:dark_amethyst"
+    },
+    "A": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "jamm:dark_amethyst_pickaxe"
+  }
+}

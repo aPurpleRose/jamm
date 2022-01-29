@@ -8,9 +8,9 @@ import net.minecraft.world.World;
 public class LunarAltarBlockEntity extends AbstractAltarBlockEntity {
 
         private int magic;
-        private static final int reqTicks = 30;
+        private static final int reqTicks = 10;
         private int ticks;
-        public static final int MAX_MAGIC = 100;
+        public static final int MAX_MAGIC = 150;
 
         public LunarAltarBlockEntity(BlockPos pos, BlockState state) {
                 super(JammBlockEntities.LUNAR_ALTAR, pos, state);

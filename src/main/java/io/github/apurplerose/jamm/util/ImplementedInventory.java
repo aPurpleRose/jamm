@@ -1,4 +1,4 @@
-package io.github.apurplerose.jamm.inventory;
+package io.github.apurplerose.jamm.util;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;

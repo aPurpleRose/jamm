@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "clicked=false": { "model": "jamm:block/test_block_default" },
+        "clicked=true": { "model": "jamm:block/test_block_clicked" }
+    }
+
+}

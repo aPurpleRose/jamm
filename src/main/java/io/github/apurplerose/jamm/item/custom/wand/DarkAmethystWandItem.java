@@ -1,4 +1,4 @@
-package io.github.apurplerose.jamm.item.custom;
+package io.github.apurplerose.jamm.item.custom.wand;
 
 import io.github.apurplerose.jamm.block.JammBlocks;
 import io.github.apurplerose.jamm.item.JammItemGroup;

@@ -20,10 +20,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Map;
 
-public class DarkAmethystChestplateArmorItem extends AbstractArmorItem {
+/*public class DarkAmethystChestplateArmorItem extends AbstractArmorItem {
 
         private ImmutableMap<ArmorMaterial, StatusEffect[]> MATERIAL_TO_EFFECT_MAP;
-        private final int MAX_MAGIC = 100;
+        private final int MAX_MAGIC = 1000;
         private int magic;
         private ArmorMaterial restOfArmor = JammArmorMaterial.DARK_AMETHYST;
 
@@ -91,4 +91,4 @@ public class DarkAmethystChestplateArmorItem extends AbstractArmorItem {
                         }
                 }
         }
-}
+}*/

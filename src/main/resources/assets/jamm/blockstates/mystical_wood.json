@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "jamm:block/mystical_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "jamm:block/mystical_wood"
+    },
+    "axis=z": {
+      "model": "jamm:block/mystical_wood",
+      "x": 90
+    }
+  }
+}

@@ -1,39 +1,62 @@
 {
-  "item.jamm.amethyst": "Amethyst",
-  "item.jamm.dark_amethyst": "Dark Amethyst",
+    "item.jamm.amethyst": "Amethyst",
+    "item.jamm.dark_amethyst": "Dark Amethyst",
 
-  "item.jamm.amethyst_wand": "Amethyst Wand",
-  "item.jamm.dark_amethyst_wand": "Dark Amethyst Wand",
-  "item.jamm.dowsing_rod": "Dowsing Rod",
+    "item.jamm.amethyst_wand": "Amethyst Wand",
+    "item.jamm.dark_amethyst_wand": "Dark Amethyst Wand",
+    "item.jamm.dowsing_rod": "Dowsing Rod",
+    "item.jamm.tutorial_book": "Tutorial Book",
 
-  "item.jamm.amethyst_axe": "Amethyst Axe",
-  "item.jamm.amethyst_hoe": "Amethyst Hoe",
-  "item.jamm.amethyst_pickaxe": "Amethyst Pickaxe",
-  "item.jamm.amethyst_shovel": "Amethyst Shovel",
-  "item.jamm.amethyst_sword": "Amethyst Sword",
+    "item.jamm.amethyst_axe": "Amethyst Axe",
+    "item.jamm.amethyst_hoe": "Amethyst Hoe",
+    "item.jamm.amethyst_pickaxe": "Amethyst Pickaxe",
+    "item.jamm.amethyst_shovel": "Amethyst Shovel",
+    "item.jamm.amethyst_sword": "Amethyst Sword",
 
-  "item.jamm.amethyst_helmet": "Amethyst Helmet",
-  "item.jamm.amethyst_chestplate": "Amethyst Chestplate",
-  "item.jamm.amethyst_leggings": "Amethyst Leggings",
-  "item.jamm.amethyst_boots": "Amethyst Boots",
+    "item.jamm.dark_amethyst_pickaxe": "Dark Amethyst Pickaxe",
+    "item.jamm.dark_amethyst_sword": "Dark Amethyst Sword",
 
-  "item.jamm.agility_amethyst_chestplate": "Agility Amethyst Chestplate",
-  "item.jamm.tank_amethyst_chestplate": "Tank Amethyst Chestplate",
+    "item.jamm.amethyst_helmet": "Amethyst Helmet",
+    "item.jamm.amethyst_chestplate": "Amethyst Chestplate",
+    "item.jamm.amethyst_leggings": "Amethyst Leggings",
+    "item.jamm.amethyst_boots": "Amethyst Boots",
 
-  "block.jamm.amethyst_block": "Amethyst Block",
-  "block.jamm.amethyst_ore": "Amethyst Ore",
-  "block.jamm.dark_amethyst_ore": "Dark Amethyst Ore",
-
-  "block.jamm.astral_altar": "Astral Altar",
-  "block.jamm.lunar_altar": "Lunar Altar",
-  "block.jamm.status_block": "Status Block",
-  "block.jamm.template_altar": "Template Altar",
-
-  "itemGroup.jamm.jamm": "Jamm",
+    "item.jamm.amethyst_chestplate_agility": "Amethyst Chestplate Agility",
+    "item.jamm.amethyst_chestplate_tank": "Amethyst Chestplate Tank",
 
 
-  "tooltip.item.jamm.dowsing_rod": "Detects magical valuables below a clicked block",
 
-  "item.jamm.amethyst_chestplate.tooltip_1": "Right click on an altar while wearing to refill.",
-  "item.jamm.amethyst_chestplate.tooltip_2": "%d magic out of %d max magic."
+    "block.jamm.amethyst_block": "Amethyst Block",
+    "block.jamm.amethyst_ore": "Amethyst Ore",
+    "block.jamm.dark_amethyst_ore": "Dark Amethyst Ore",
+
+    "block.jamm.astral_altar": "Astral Altar",
+    "block.jamm.lunar_altar": "Lunar Altar",
+    "block.jamm.status_block": "Status Block",
+    "block.jamm.template_altar": "Template Altar",
+
+
+
+    "enchantment.jamm.launch": "Launch",
+    "enchantment.jamm.lightning_striker": "Lightning Striker",
+
+
+
+    "itemGroup.jamm.jamm": "Jamm",
+
+
+
+    "advancements.jamm.root.title": "Just the beginning",
+    "advancements.jamm.root.description": "Your journey starts now.",
+    "advancements.jamm.dark_amethyst.title": "Come to the dark side",
+    "advancements.jamm.dark_amethyst.description": "We have cookies. (pretty crunchy, but what do you expect from stone cookies)",
+
+
+
+    "tooltip.item.jamm.dark_amethyst": "It is emitting a strong energy.",
+
+    "tooltip.item.jamm.dowsing_rod": "Detects magical valuables below a clicked block.",
+
+    "tooltip_1.item.jamm.amethyst_chestplate": "Right click on an altar while wearing to refill.",
+    "tooltip_2.item.jamm.amethyst_chestplate": "%d magic out of %d max magic."
 }

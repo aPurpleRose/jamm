@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "jamm:block/mystical_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "jamm:block/mystical_log"
+    },
+    "axis=z": {
+      "model": "jamm:block/mystical_log_horizontal",
+      "x": 90
+    }
+  }
+}

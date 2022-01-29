@@ -5,12 +5,11 @@ import io.github.apurplerose.jamm.item.JammArmorMaterial;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -22,32 +21,37 @@ import java.util.Map;
 
 public class AmethystChestplateArmorItem extends AbstractArmorItem {
 
-        private final ImmutableMap<ArmorMaterial, StatusEffect[]> MATERIAL_TO_EFFECT_MAP;
-        private final int MAX_MAGIC = 20;
-        private int magic;
+        private final ImmutableMap<ArmorMaterial, StatusEffectInstance[]> MATERIAL_TO_EFFECT_MAP;
+        private final int MAX_MAGIC = 200;
         private final ArmorMaterial restOfArmor = JammArmorMaterial.AMETHYST;
 
 
-        public AmethystChestplateArmorItem(ArmorMaterial material, EquipmentSlot slot, Settings settings, StatusEffect[] effects) {
+        public AmethystChestplateArmorItem(ArmorMaterial material, EquipmentSlot slot, Settings settings, StatusEffectInstance... effects) {
                 super(material, slot, settings);
-                magic = 0;
-                MATERIAL_TO_EFFECT_MAP = (new ImmutableMap.Builder<ArmorMaterial, StatusEffect[]>())
+                NbtCompound nbtData = new NbtCompound();
+                nbtData.putInt("magic", 0);
+                MATERIAL_TO_EFFECT_MAP = (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance[]>())
                                 .put(material, effects).build();
         }
 
         @Override
-        public int missingMagic() {
-                return MAX_MAGIC - magic;
+        public int missingMagic(ItemStack item) {
+                NbtCompound nbtData = item.getNbt();
+                return MAX_MAGIC - nbtData.getInt("magic");
         }
 
         @Override
-        public void addMagic(int magic) {
-                this.magic += magic;
+        public void addMagic(ItemStack item, int magic) {
+                NbtCompound nbtData = item.getNbt();
+                nbtData.putInt("magic", nbtData.getInt("magic") + magic);
+                item.setNbt(nbtData);
         }
 
         public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-                tooltip.add(new TranslatableText("item.jamm.amethyst_chestplate.tooltip_1").formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
-                tooltip.add(new TranslatableText("item.jamm.amethyst_chestplate.tooltip_2", magic, MAX_MAGIC).formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
+                //int magic = stack.getNbt().getInt("magic");
+                tooltip.add(new TranslatableText("tooltip_1.item.jamm.amethyst_chestplate").formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
+                tooltip.add(new TranslatableText("tooltip_2.item.jamm.amethyst_chestplate", stack.getNbt().getInt("magic"), MAX_MAGIC).formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
+
         }
 
         @Override
@@ -66,28 +70,30 @@ public class AmethystChestplateArmorItem extends AbstractArmorItem {
                 super.inventoryTick(stack, world, entity, slot, selected);
         }
 
-        //@Override
         protected void evaluateArmorEffects(PlayerEntity player) {
-                for (Map.Entry<ArmorMaterial, StatusEffect[]> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
+                for (Map.Entry<ArmorMaterial, StatusEffectInstance[]> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
                         ArmorMaterial material = entry.getKey();
-                        StatusEffect[] effects = entry.getValue();
+                        StatusEffectInstance[] effects = entry.getValue();
 
                         if (hasCorrectSet(material, restOfArmor, player)) {
-                                for (StatusEffect effect : effects) {
+                                for (StatusEffectInstance effect : effects) {
                                         addStatusEffect(player, effect);
                                 }
                         }
                 }
         }
 
-        //@Override
-        protected void addStatusEffect(PlayerEntity player, StatusEffect effect) {
-                boolean hasPlayerEffect = player.hasStatusEffect(effect);
+        protected void addStatusEffect(PlayerEntity player, StatusEffectInstance effect) {
+                boolean hasPlayerEffect = player.hasStatusEffect(effect.getEffectType());
 
                 if (!hasPlayerEffect) {
+                        ItemStack chestplate = player.getInventory().getArmorStack(2);
+                        NbtCompound nbtData = chestplate.getNbt();
+                        int magic = nbtData.getInt("magic");
                         if (magic > 0) {
-                                player.addStatusEffect(new StatusEffectInstance(effect, 200));
-                                magic -= 1;
+                                player.addStatusEffect(new StatusEffectInstance(effect));
+                                nbtData.putInt("magic", magic - 1);
+                                chestplate.setNbt(nbtData);
                         }
                 }
         }

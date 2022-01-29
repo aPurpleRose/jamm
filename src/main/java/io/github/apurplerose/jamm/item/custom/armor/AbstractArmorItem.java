@@ -2,6 +2,7 @@ package io.github.apurplerose.jamm.item.custom.armor;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
@@ -9,21 +10,12 @@ import net.minecraft.item.ItemStack;
 
 public abstract class AbstractArmorItem extends ArmorItem {
 
-        //static StatusEffect[] AMETHYST_EFFECT = new StatusEffect[]{StatusEffects.JUMP_BOOST, StatusEffects.SPEED};
-
-        /*private static ImmutableMap<ArmorMaterial, StatusEffect[]> MATERIAL_TO_EFFECT_MAP; =
-                (new ImmutableMap.Builder<ArmorMaterial, StatusEffect[]>())
-                        .put(JammArmorMaterial.AMETHYST, AMETHYST_EFFECT).build();*/
-
         public AbstractArmorItem(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
                 super(material, slot, settings);
         }
 
-        
-        //private int MAX_MAGIC;
-        //private int magic;
-        public abstract int missingMagic();
-        public abstract void addMagic(int magic);
+        public abstract int missingMagic(ItemStack item);
+        public abstract void addMagic(ItemStack item, int magic);
 
 
         protected abstract void evaluateArmorEffects(PlayerEntity player);
@@ -59,6 +51,6 @@ public abstract class AbstractArmorItem extends ArmorItem {
                         && leggings.getMaterial() == material2 && boots.getMaterial() == material2;
         }
 
-        protected abstract void addStatusEffect(PlayerEntity player, StatusEffect effect);
+        protected abstract void addStatusEffect(PlayerEntity player, StatusEffectInstance effect);
 
 }

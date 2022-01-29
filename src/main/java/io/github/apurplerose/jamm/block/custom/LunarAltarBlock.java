@@ -45,25 +45,20 @@ public class LunarAltarBlock extends AbstractAltarBlock {
                                 lae = (LunarAltarBlockEntity) world.getBlockEntity(pos);
                                 int magic = lae.getMagic();
 
-                                Item chestplate = player.getInventory().getArmorStack(2).getItem();
-                                //player.sendMessage(new LiteralText(chestplate.getClass().toString()),false);
-                                if (chestplate instanceof AbstractArmorItem) {
-                                        AbstractArmorItem aai = (AbstractArmorItem) chestplate;
-                                        int missing_magic = aai.missingMagic();
+                                ItemStack chestplate = player.getInventory().getArmorStack(2);
 
-                                        //player.sendMessage(new LiteralText(Integer.toString(missing_magic)), false);
+                                if (chestplate.getItem() instanceof AbstractArmorItem) {
+                                        AbstractArmorItem aai = (AbstractArmorItem) chestplate.getItem();
+                                        int missing_magic = aai.missingMagic(chestplate);
 
                                         if (magic >= missing_magic) {
                                                 lae.removeMagic(missing_magic);
-                                                aai.addMagic(missing_magic);
+                                                aai.addMagic(chestplate, missing_magic);
                                         } else {
                                                 lae.removeMagic(magic);
-                                                aai.addMagic(magic);
+                                                aai.addMagic(chestplate, magic);
                                         }
                                 }
-
-                                //String str_magic = Integer.toString(magic);
-                                //player.sendMessage(new LiteralText(str_magic), false);
                         }
                 }
 
