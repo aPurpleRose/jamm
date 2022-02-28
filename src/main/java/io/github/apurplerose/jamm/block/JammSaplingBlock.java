@@ -1,4 +1,4 @@
-package io.github.apurplerose.jamm.block.custom;
+package io.github.apurplerose.jamm.block;
 
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.sapling.SaplingGenerator;

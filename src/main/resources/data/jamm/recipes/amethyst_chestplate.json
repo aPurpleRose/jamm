@@ -1,7 +1,7 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "###",
+        "# #",
         "###",
         "###"
     ],
@@ -11,6 +11,6 @@
         }
     },
     "result": {
-        "item": "jamm:amethyst_block"
+        "item": "jamm:amethyst_chestplate"
     }
 }

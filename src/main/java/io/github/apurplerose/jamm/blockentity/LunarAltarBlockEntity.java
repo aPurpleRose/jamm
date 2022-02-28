@@ -18,10 +18,9 @@ public class LunarAltarBlockEntity extends AbstractAltarBlockEntity {
         }
 
         @Override
-        public NbtCompound writeNbt(NbtCompound nbt) {
+        public void writeNbt(NbtCompound nbt) {
                 super.writeNbt(nbt);
                 nbt.putInt("magic", magic);
-                return nbt;
         }
 
         @Override

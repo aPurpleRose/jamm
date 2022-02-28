@@ -1,4 +1,4 @@
-package io.github.apurplerose.jamm.block.custom;
+package io.github.apurplerose.jamm.block;
 
 /*
 *   Credit for this Code mostly goes to SynthRose

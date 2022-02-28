@@ -30,14 +30,7 @@ public class AmethystChestplateArmorItem extends AbstractArmorItem {
                 super(material, slot, settings);
                 NbtCompound nbtData = new NbtCompound();
                 nbtData.putInt("magic", 0);
-                MATERIAL_TO_EFFECT_MAP = (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance[]>())
-                                .put(material, effects).build();
-        }
-
-        @Override
-        public int missingMagic(ItemStack item) {
-                NbtCompound nbtData = item.getNbt();
-                return MAX_MAGIC - nbtData.getInt("magic");
+                MATERIAL_TO_EFFECT_MAP = (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance[]>()).put(material, effects).build();
         }
 
         @Override
@@ -47,11 +40,22 @@ public class AmethystChestplateArmorItem extends AbstractArmorItem {
                 item.setNbt(nbtData);
         }
 
-        public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-                //int magic = stack.getNbt().getInt("magic");
-                tooltip.add(new TranslatableText("tooltip_1.item.jamm.amethyst_chestplate").formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
-                tooltip.add(new TranslatableText("tooltip_2.item.jamm.amethyst_chestplate", stack.getNbt().getInt("magic"), MAX_MAGIC).formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
+        @Override
+        public boolean hasRecipeRemainder() {
+                return super.hasRecipeRemainder();
+        }
 
+        @Override
+        public int missingMagic(ItemStack item) {
+                NbtCompound nbtData = item.getNbt();
+                return MAX_MAGIC - nbtData.getInt("magic");
+        }
+
+        public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+                tooltip.add(new TranslatableText("tooltip_1.item.jamm.amethyst_chestplate")
+                        .formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
+                tooltip.add(new TranslatableText("tooltip_2.item.jamm.amethyst_chestplate", stack.getNbt().getInt("magic"), MAX_MAGIC).
+                        formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
         }
 
         @Override
@@ -65,7 +69,6 @@ public class AmethystChestplateArmorItem extends AbstractArmorItem {
                                 }
                         }
                 }
-
 
                 super.inventoryTick(stack, world, entity, slot, selected);
         }

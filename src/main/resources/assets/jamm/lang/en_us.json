@@ -16,6 +16,9 @@
     "item.jamm.dark_amethyst_pickaxe": "Dark Amethyst Pickaxe",
     "item.jamm.dark_amethyst_sword": "Dark Amethyst Sword",
 
+    "item.jamm.agility_orb": "Agility Orb",
+    "item.jamm.heal_orb": "Heal Orb",
+
     "item.jamm.amethyst_helmet": "Amethyst Helmet",
     "item.jamm.amethyst_chestplate": "Amethyst Chestplate",
     "item.jamm.amethyst_leggings": "Amethyst Leggings",
@@ -53,6 +56,7 @@
 
 
 
+    "tooltip.item.jamm.amethyst_wand": "%d magic out of %d max magic.",
     "tooltip.item.jamm.dark_amethyst": "It is emitting a strong energy.",
 
     "tooltip.item.jamm.dowsing_rod": "Detects magical valuables below a clicked block.",

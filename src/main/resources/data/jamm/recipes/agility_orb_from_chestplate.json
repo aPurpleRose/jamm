@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "jamm:amethyst_chestplate_agility",
+            "remainder": {
+                "item": "jamm:amethyst_chestplate"
+            }
+        }
+    ],
+    "result": {
+        "item": "jamm:agility_orb"
+    }
+}

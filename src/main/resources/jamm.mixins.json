@@ -4,6 +4,7 @@
   "package": "io.github.apurplerose.jamm.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "NoiseChunkGeneratorMixin"
   ],
   "client": [
     "JammMixin"
