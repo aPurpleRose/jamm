@@ -1,6 +1,6 @@
 package io.github.apurplerose.jamm.item.custom;
 
-import io.github.apurplerose.jamm.gui.TutorialBookGui;
+import io.github.apurplerose.jamm.gui.handler.TutorialBookHandler;
 import io.github.apurplerose.jamm.gui.screen.TutorialBookScreen;
 import io.github.apurplerose.jamm.item.JammItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -25,9 +25,8 @@ public class TutorialBookItem extends Item {
         @Override
         public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
                 if (world.isClient()) {
-                        MinecraftClient.getInstance().setScreen(new TutorialBookScreen(new TutorialBookGui()));
+                        MinecraftClient.getInstance().setScreen(new TutorialBookScreen(new TutorialBookHandler()));
                 }
-
                 return super.use(world, user, hand);
         }
 }

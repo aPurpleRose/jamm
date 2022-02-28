@@ -2,7 +2,6 @@ package io.github.apurplerose.jamm;
 
 import io.github.apurplerose.jamm.enchantments.JammEnchantments;
 import io.github.apurplerose.jamm.item.JammItems;
-import io.github.apurplerose.jamm.recipe.JammRecipes;
 import io.github.apurplerose.jamm.registries.JammRegistries;
 import io.github.apurplerose.jamm.util.JammRenderHelper;
 import io.github.apurplerose.jamm.world.features.JammConfiguredFeatures;
@@ -38,8 +37,6 @@ public class Jamm implements ModInitializer {
                 JammHandlers.registerHandlers();
 
                 JammEnchantments.registerEnchantments();
-
-                JammRecipes.registerRecipes();
 
                 JammWorldGen.generateJammWorldGen();
 

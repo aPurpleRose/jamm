@@ -1,4 +1,4 @@
-package io.github.apurplerose.jamm.block;
+package io.github.apurplerose.jamm.block.custom;
 
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
