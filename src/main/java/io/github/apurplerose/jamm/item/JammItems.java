@@ -4,8 +4,7 @@ import io.github.apurplerose.jamm.Jamm;
 import io.github.apurplerose.jamm.item.custom.*;
 import io.github.apurplerose.jamm.item.custom.armor.AmethystChestplateArmorItem;
 import io.github.apurplerose.jamm.item.custom.tool.*;
-import io.github.apurplerose.jamm.item.custom.wand.AmethystWandItem;
-import io.github.apurplerose.jamm.item.custom.wand.DarkAmethystWandItem;
+import io.github.apurplerose.jamm.item.custom.wand.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -40,6 +39,7 @@ public class JammItems {
         //</editor-fold>
 
         //<editor-fold desc="orbs">
+        public static final Item ORB = new Item(defaults());
         public static final Item AGILITY_ORB = new Item(defaults());
         public static final Item HEAL_ORB = new Item(defaults());
         //</editor-fold>
@@ -51,10 +51,18 @@ public class JammItems {
         public static final Item AMETHYST_BOOTS = new ArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.FEET, defaults());
 
         public static final Item AMETHYST_CHESTPLATE_AGILITY = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.CHEST, defaults(),
-                new StatusEffectInstance(StatusEffects.JUMP_BOOST, 200, 2, false, false),
-                new StatusEffectInstance(StatusEffects.SPEED, 200, 2, false, false));
+                new StatusEffectInstance(StatusEffects.JUMP_BOOST, 20, 2, false, false),
+                new StatusEffectInstance(StatusEffects.SPEED, 20, 2, false, false));
         public static final Item AMETHYST_CHESTPLATE_TANK = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_TANK, EquipmentSlot.CHEST, defaults(),
-                new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 2, false, false));
+                new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 2, false, false)); // why is it a different material?
+        public static final Item AMETHYST_CHESTPLATE_LEVITATION = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.CHEST, defaults(),
+                //new StatusEffectInstance(StatusEffects.LEVITATION, 20, 2, false, false),
+                new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 2, false, false));
+                        // improvised so there is something, should enable flying like creative
+                        // OR: high jump when normally jumping and giving levitation when holding down space until it is stopped
+                        // btw I think the durations don't add up for the chestplate,
+                                // the effect lingers too long after taking them of because of 200 instead of 20 how it was before, idk why changed
+
         /* plan:
          * armor gives effects like high jump and speed and ..., maybe a custom paranoia effect when the armor gives too much strong effects
          * in order to grant these effects, you have to insert amulets into the chestplate via crafting, maybe you can also get them back somehow
@@ -81,7 +89,7 @@ public class JammItems {
         public static final Item AMETHYST_WAND_LEVITATION_WEAK = new AmethystWandItem(
                 new StatusEffectInstance(StatusEffects.LEVITATION, 100, 1, false, false));
         public static final Item AMETHYST_WAND_LEVITATION_STRONG = new AmethystWandItem(
-                new StatusEffectInstance(StatusEffects.LEVITATION, 300, 2, false, false));
+                new StatusEffectInstance(StatusEffects.LEVITATION, 100, 3, false, false));
 
         public static final Item AMETHYST_WAND_AGILITY_WEAK = new AmethystWandItem(
                 new StatusEffectInstance(StatusEffects.JUMP_BOOST, 200, 1, false, false),
@@ -96,6 +104,8 @@ public class JammItems {
         public static final Item AMETHYST_WAND_HEAL_STRONG = new AmethystWandItem(
                 new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 600, 2, false, false),
                 new StatusEffectInstance(StatusEffects.REGENERATION, 600, 2, false, false));
+
+        public static final Item AMETHYST_BREAK_WAND = new AmethystBreakWandItem();
         //</editor-fold>
 
         //<editor-fold desc="misc items">
@@ -134,6 +144,7 @@ public class JammItems {
                 //</editor-fold>
 
                 //<editor-fold desc="orbs">
+                register("orb", ORB);
                 register("agility_orb", AGILITY_ORB);
                 register("heal_orb", HEAL_ORB);
                 //</editor-fold>
@@ -148,6 +159,7 @@ public class JammItems {
                 //<editor-fold desc="special chestplate">
                 register("amethyst_chestplate_agility", AMETHYST_CHESTPLATE_AGILITY);
                 register("amethyst_chestplate_tank", AMETHYST_CHESTPLATE_TANK);
+                register("amethyst_chestplate_levitation", AMETHYST_CHESTPLATE_LEVITATION);
                 //</editor-fold>
 
                 //<editor-fold desc="wands">
@@ -158,6 +170,7 @@ public class JammItems {
                 register("amethyst_wand_heal_strong", AMETHYST_WAND_HEAL_STRONG);
                 register("amethyst_wand_levitation_weak", AMETHYST_WAND_LEVITATION_WEAK);
                 register("amethyst_wand_levitation_strong", AMETHYST_WAND_LEVITATION_STRONG);
+                register("amethyst_break_wand", AMETHYST_BREAK_WAND);
                 //</editor-fold>
 
                 //<editor-fold desc="misc">

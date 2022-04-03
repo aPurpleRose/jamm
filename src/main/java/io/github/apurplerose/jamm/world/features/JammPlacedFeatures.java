@@ -5,17 +5,17 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.gen.decorator.BiomePlacementModifier;
-import net.minecraft.world.gen.decorator.CountPlacementModifier;
-import net.minecraft.world.gen.decorator.PlacementModifier;
-import net.minecraft.world.gen.decorator.SquarePlacementModifier;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
+import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
+import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
 import java.util.List;
 
-public class JammPlacedFeatures {
+/*public class JammPlacedFeatures {
 
         public static final RegistryKey<PlacedFeature> MYSTICAL_TREE_KEY = registerKey("mystical_spawn");
 
@@ -41,4 +41,4 @@ public class JammPlacedFeatures {
                 return RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(Jamm.MOD_ID, name));
         }
 
-}
+}*/

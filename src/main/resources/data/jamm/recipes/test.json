@@ -1,9 +1,24 @@
 {
-    "type": "jamm:altar_recipe",
-    "inputA" : {
+    "type": "jamm:astral_altar_recipe",
+    "center" : {
         "item": "minecraft:redstone"
     },
-    "inputB": {
+    "offering1": {
+        "tag": "minecraft:logs"
+    },
+    "offering2": {
+        "tag": "minecraft:logs"
+    },
+    "offering3": {
+        "tag": "minecraft:logs"
+    },
+    "offering4": {
+        "tag": "minecraft:logs"
+    },
+    "offering5": {
+        "tag": "minecraft:logs"
+    },
+    "offering6": {
         "tag": "minecraft:logs"
     },
     "result": "minecraft:cobblestone",

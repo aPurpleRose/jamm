@@ -41,11 +41,6 @@ public class AmethystChestplateArmorItem extends AbstractArmorItem {
         }
 
         @Override
-        public boolean hasRecipeRemainder() {
-                return super.hasRecipeRemainder();
-        }
-
-        @Override
         public int missingMagic(ItemStack item) {
                 NbtCompound nbtData = item.getNbt();
                 return MAX_MAGIC - nbtData.getInt("magic");

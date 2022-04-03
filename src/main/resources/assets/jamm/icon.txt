@@ -1,0 +1,16 @@
+Moebius star icon on game-icons.net
+
+foreground
+
+turned by 90 (so that a corner is up and left+right are symmetrical)
+
+Gradient:
+horizontal
+from 9013FE (dark purple)
+to FC88FC (light purple)
+(so that the darker is up)
+
+Shadow:
+color black
+blur 1
+side in

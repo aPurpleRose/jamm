@@ -8,7 +8,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.gen.feature.StructurePoolFeatureConfig;
 
-public class JammConfiguredStructures {
+/*public class JammConfiguredStructures {
 
         public static final ConfiguredStructureFeature<?, ?> CONFIGURED_RUN_DOWN_HOUSE = JammStructures.RUN_DOWN_HOUSE
                 .configure(new StructurePoolFeatureConfig(() -> PlainsVillageData.STRUCTURE_POOLS, 0));
@@ -19,4 +19,4 @@ public class JammConfiguredStructures {
                 Registry.register(registry, new Identifier(Jamm.MOD_ID, "configured_run_down_house"), CONFIGURED_RUN_DOWN_HOUSE);
         }
 
-}
+}*/

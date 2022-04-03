@@ -4,9 +4,6 @@ import io.github.apurplerose.jamm.enchantments.JammEnchantments;
 import io.github.apurplerose.jamm.item.JammItems;
 import io.github.apurplerose.jamm.recipe.JammRecipes;
 import io.github.apurplerose.jamm.registries.JammRegistries;
-import io.github.apurplerose.jamm.util.JammRenderHelper;
-import io.github.apurplerose.jamm.world.features.JammConfiguredFeatures;
-import io.github.apurplerose.jamm.world.gen.JammWorldGen;
 import net.fabricmc.api.ModInitializer;
 import io.github.apurplerose.jamm.block.JammBlocks;
 import io.github.apurplerose.jamm.blockentity.JammBlockEntities;
@@ -27,7 +24,7 @@ public class Jamm implements ModInitializer {
                 // Proceed with mild caution.
 
 
-                JammConfiguredFeatures.registerConfiguredFeatures();
+                //JammConfiguredFeatures.registerConfiguredFeatures();
 
                 JammItems.registerItems();
                 JammBlocks.registerBlocks();
@@ -41,7 +38,7 @@ public class Jamm implements ModInitializer {
 
                 JammRecipes.registerRecipes();
 
-                JammWorldGen.generateJammWorldGen();
+                //JammWorldGen.generateJammWorldGen();
 
 
                 System.out.println("Hello Fabric world!");

@@ -1,0 +1,25 @@
+{
+    "type": "jamm:astral_altar_recipe",
+    "center" : {
+        "item": "jamm:amethyst_chestplate"
+    },
+    "offering1": {
+        "item": "jamm:agility_orb"
+    },
+    "offering2": {
+        "item": "minecraft:gold_ingot"
+    },
+    "offering3": {
+        "item": "minecraft:redstone"
+    },
+    "offering4": {
+        "item": "jamm:amethyst"
+    },
+    "offering5": {
+        "item": "minecraft:redstone"
+    },
+    "offering6": {
+        "item": "minecraft:gold_ingot"
+    },
+    "result": "jamm:amethyst_chestplate_agility"
+}

@@ -1,14 +1,10 @@
 package io.github.apurplerose.jamm.world.gen;
 
 import io.github.apurplerose.jamm.Jamm;
-import io.github.apurplerose.jamm.world.structures.JammConfiguredStructures;
-import io.github.apurplerose.jamm.world.structures.JammStructures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
-import net.fabricmc.fabric.impl.structure.FabricStructureImpl;
-import net.fabricmc.fabric.mixin.structure.StructuresConfigAccessor;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
@@ -18,14 +14,11 @@ import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.chunk.FlatChunkGenerator;
-import net.minecraft.world.gen.chunk.StructureConfig;
-import net.minecraft.world.gen.chunk.StructuresConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 
 import java.util.HashMap;
-import java.util.Map;
 
-public class JammWorldGen {
+/*public class JammWorldGen {
 
         public static void generateJammWorldGen() {
                 JammTreeGen.generateTrees();
@@ -75,4 +68,4 @@ public class JammWorldGen {
                 });
         }
 
-}
+}*/

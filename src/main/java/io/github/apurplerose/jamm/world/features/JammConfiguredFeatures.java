@@ -14,7 +14,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.List;
 
-public class JammConfiguredFeatures {
+/*public class JammConfiguredFeatures {
 
         public static final ConfiguredFeature<TreeFeatureConfig, ?> MYSTICAL_TREE = register("mystical",
                 Feature.TREE.configure(new TreeFeatureConfig.Builder(
@@ -40,4 +40,4 @@ public class JammConfiguredFeatures {
 
 
         }
-}
+}*/

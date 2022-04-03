@@ -1,7 +1,5 @@
 package io.github.apurplerose.jamm.mixin;
 
-import io.github.apurplerose.jamm.world.structures.JammStructures;
-import io.github.apurplerose.jamm.world.structures.RunDownHouseStructure;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.collection.Pool;
 import net.minecraft.util.math.BlockPos;
@@ -17,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(NoiseChunkGenerator.class)
 public class NoiseChunkGeneratorMixin {
 
-        @Inject(
+        /*@Inject(
                 method = "getEntitySpawnList(Lnet/minecraft/world/biome/Biome;Lnet/minecraft/world/gen/StructureAccessor;Lnet/minecraft/entity/SpawnGroup;Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/util/collection/Pool;",
                 at = @At(value = "HEAD"),
                 cancellable = true
@@ -41,6 +39,6 @@ public class NoiseChunkGeneratorMixin {
                 }
 
                 return null;
-        }
+        }*/
 
 }

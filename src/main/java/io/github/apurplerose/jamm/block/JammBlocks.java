@@ -2,7 +2,6 @@ package io.github.apurplerose.jamm.block;
 
 import io.github.apurplerose.jamm.Jamm;
 import io.github.apurplerose.jamm.item.JammItems;
-import io.github.apurplerose.jamm.world.features.tree.MysticalSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -22,7 +21,7 @@ public class JammBlocks {
         //<editor-fold desc="altars">
         public static final Block ASTRAL_ALTAR = new AstralAltarBlock();
         public static final Block LUNAR_ALTAR = new LunarAltarBlock();
-        public static final Block TEMPLATE_ALTAR = new TemplateAltarBlock();
+        public static final Block WOODEN_ALTAR = new WoodenAltarBlock();
         //</editor-fold>
 
         //<editor-fold desc="trees">
@@ -33,7 +32,7 @@ public class JammBlocks {
         public static final Block MYSTICAL_PLANKS = new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS));
 
         public static final Block MYSTICAL_LEAVES =  new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES));
-        public static final Block MYSTICAL_SAPLING = new JammSaplingBlock(new MysticalSaplingGenerator(), FabricBlockSettings.copy(Blocks.JUNGLE_SAPLING));
+        //public static final Block MYSTICAL_SAPLING = new JammSaplingBlock(new MysticalSaplingGenerator(), FabricBlockSettings.copy(Blocks.JUNGLE_SAPLING));
         //</editor-fold>
 
         // https://www.pinterest.de/pin/503699539567418170/ inspiration for look, final huge tree, biome and also the shrooms
@@ -61,7 +60,7 @@ public class JammBlocks {
                 //<editor-fold desc="altars">
                 register("astral_altar", ASTRAL_ALTAR);
                 register("lunar_altar", LUNAR_ALTAR);
-                register("template_altar", TEMPLATE_ALTAR);
+                register("wooden_altar", WOODEN_ALTAR);
                 //</editor-fold>
 
                 //<editor-fold desc="trees">
@@ -72,7 +71,7 @@ public class JammBlocks {
                 register("mystical_planks", MYSTICAL_PLANKS);
 
                 register("mystical_leaves", MYSTICAL_LEAVES);
-                register("mystical_sapling", MYSTICAL_SAPLING);
+                //register("mystical_sapling", MYSTICAL_SAPLING);
                 //</editor-fold>
 
                 //<editor-fold desc="misc">

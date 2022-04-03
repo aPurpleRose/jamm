@@ -1,14 +1,12 @@
 package io.github.apurplerose.jamm.world.structures;
 
 import io.github.apurplerose.jamm.Jamm;
-import net.fabricmc.fabric.api.structure.v1.FabricStructureBuilder;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.chunk.StructureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.gen.feature.StructurePoolFeatureConfig;
 
-public class JammStructures {
+/*public class JammStructures {
 
         public static final StructureFeature<StructurePoolFeatureConfig> RUN_DOWN_HOUSE = new RunDownHouseStructure(StructurePoolFeatureConfig.CODEC);
 
@@ -24,4 +22,4 @@ public class JammStructures {
 
         }
 
-}
+}*/

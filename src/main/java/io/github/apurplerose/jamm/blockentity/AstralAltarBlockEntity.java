@@ -15,11 +15,10 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import io.github.apurplerose.jamm.gui.handler.AstralAltarHandler;
-import io.github.apurplerose.jamm.util.ImplementedInventory;
+import io.github.apurplerose.jamm.util.AstralAltarInventory;
 
 
-public class AstralAltarBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
+public class AstralAltarBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, AstralAltarInventory {
 
         private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(7, ItemStack.EMPTY);
 

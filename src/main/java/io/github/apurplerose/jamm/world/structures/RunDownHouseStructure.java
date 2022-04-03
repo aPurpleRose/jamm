@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Level;
 
 import java.util.Optional;
 
-public class RunDownHouseStructure extends StructureFeature<StructurePoolFeatureConfig> {
+/*public class RunDownHouseStructure extends StructureFeature<StructurePoolFeatureConfig> {
 
         public RunDownHouseStructure(Codec<StructurePoolFeatureConfig> codec) {
                 super(codec, RunDownHouseStructure::createPiecesGenerator, PostPlacementProcessor.EMPTY);
@@ -95,4 +95,4 @@ public class RunDownHouseStructure extends StructureFeature<StructurePoolFeature
                 return structurePiecesGenerator;
         }
 
-}
+}*/

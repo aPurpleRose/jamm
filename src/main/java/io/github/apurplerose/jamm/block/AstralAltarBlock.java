@@ -2,8 +2,8 @@ package io.github.apurplerose.jamm.block;
 
 import io.github.apurplerose.jamm.blockentity.AstralAltarBlockEntity;
 import io.github.apurplerose.jamm.item.JammItems;
-import io.github.apurplerose.jamm.recipe.AltarRecipe;
-import io.github.apurplerose.jamm.util.ImplementedInventory;
+import io.github.apurplerose.jamm.recipe.AstralAltarRecipe;
+import io.github.apurplerose.jamm.util.AstralAltarInventory;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -43,28 +43,34 @@ public class AstralAltarBlock extends BlockWithEntity {
 
         @Override
         public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-                if(!world.isClient && hand == Hand.MAIN_HAND){
-                        if (player.getStackInHand(hand).isOf(JammItems.AMETHYST_WAND)) {
-                                ImplementedInventory inventory = (ImplementedInventory) world.getBlockEntity(pos);
+                if (hand == Hand.OFF_HAND) return ActionResult.PASS;
+                if(world.isClient) return ActionResult.SUCCESS;
 
-                                Optional<AltarRecipe> match = world.getRecipeManager().getFirstMatch(AltarRecipe.Type.INSTANCE, inventory, world);
+                if (player.getStackInHand(hand).isOf(JammItems.AMETHYST_WAND)) {
+                        AstralAltarInventory inventory = (AstralAltarInventory) world.getBlockEntity(pos);
 
-                                if (match.isPresent()) {
-                                        player.sendMessage(new LiteralText("match!"), false);
-                                        player.getInventory().offerOrDrop(match.get().getOutput().copy());
-                                } else {
-                                        player.sendMessage(new LiteralText("No match!"), false);
+                        Optional<AstralAltarRecipe> match = world.getRecipeManager().getFirstMatch(AstralAltarRecipe.Type.INSTANCE, inventory, world);
+
+                        if (match.isPresent()) {
+                                player.sendMessage(new LiteralText("match!"), false);
+
+                                for (int i = 0; i < 7; i++) {
+                                        inventory.getStack(i).decrement(1);
                                 }
 
+                                player.getInventory().offerOrDrop(match.get().getOutput().copy());
                         } else {
-                                NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
+                                player.sendMessage(new LiteralText("No match!"), false);
+                        }
 
-                                if (screenHandlerFactory != null) {
-                                        player.openHandledScreen(screenHandlerFactory);
-                                }
+                } else {
+                        NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
+
+                        if (screenHandlerFactory != null) {
+                                player.openHandledScreen(screenHandlerFactory);
                         }
                 }
-                return ActionResult.SUCCESS;
+                return ActionResult.CONSUME;
         }
 
         @Override

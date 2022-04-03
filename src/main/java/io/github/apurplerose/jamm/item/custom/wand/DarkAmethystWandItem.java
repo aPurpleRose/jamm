@@ -25,7 +25,7 @@ public class DarkAmethystWandItem extends Item {
         World world = context.getWorld();
         BlockPos blockPos = context.getBlockPos();
         BlockState blockState = world.getBlockState(blockPos);
-        if(blockState.isOf(JammBlocks.TEMPLATE_ALTAR)){
+        if (blockState.isOf(JammBlocks.WOODEN_ALTAR)){
 
         } else {
             return ActionResult.PASS;
