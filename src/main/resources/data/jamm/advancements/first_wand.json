@@ -1,0 +1,35 @@
+{
+    "parent": "jamm:root",
+    "display": {
+        "icon": {
+            "item": "jamm:amethyst_wand"
+        },
+        "title": {
+            "translate": "advancements.jamm.first_wand.title"
+        },
+        "description": {
+            "translate": "advancements.jamm.first_wand.description"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "criteria": {
+        "first_wand": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": {
+                            "tag": "jamm:wands"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "first_wand"
+        ]
+    ]
+}

@@ -27,9 +27,12 @@ public enum JammArmorMaterial implements ArmorMaterial {
 
         AMETHYST_AGILITY("amethyst_agility",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
                 1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST)),
+        AMETHYST_LEVITATION("amethyst_levitation",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+                1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST)),
+        AMETHYST_SATURATION("amethyst_saturation",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+                1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST)),
         AMETHYST_TANK("amethyst_tank",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
                 1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST));
-
 
         private static final int[] BASE_DURABILITY;
         private final String name;

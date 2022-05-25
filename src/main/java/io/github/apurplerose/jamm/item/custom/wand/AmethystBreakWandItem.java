@@ -28,7 +28,7 @@ public class AmethystBreakWandItem extends AmethystWandItem {
         private static final Settings SETTINGS = new FabricItemSettings()
                 .group(JammItemGroup.JAMM)
                 .maxCount(1);
-        private final int MAX_MAGIC = 100;
+        private final int MAX_MAGIC = 700;
 
         public AmethystBreakWandItem() {
                 super();
@@ -40,10 +40,12 @@ public class AmethystBreakWandItem extends AmethystWandItem {
                 BlockPos pos = context.getBlockPos();
                 ItemStack stack = context.getStack();
                 BlockState state = world.getBlockState(pos);
-
+                int hardness = (int)state.getHardness(world, pos);
                 NbtCompound nbtData = stack.getNbt();
-                if (nbtData.getInt("magic") <= 0 || state.isOf(JammBlocks.LUNAR_ALTAR) || state.isOf(Blocks.BEDROCK)) return super.useOnBlock(context);
-                addMagic(stack, -1);
+
+                if (nbtData.getInt("magic") - hardness < 0 || state.isOf(JammBlocks.LUNAR_ALTAR) || hardness == -1) return super.useOnBlock(context);
+
+                addMagic(stack, -hardness);
                 world.breakBlock(pos, true);
 
                 return ActionResult.SUCCESS;
@@ -52,12 +54,12 @@ public class AmethystBreakWandItem extends AmethystWandItem {
         @Override
         public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
                 NbtCompound nbtData = stack.getNbt();
-                if (nbtData.getInt("magic") > 0) {
-                        addMagic(stack, -1);
-                        entity.damage(DamageSource.MAGIC, 3);
-                }
 
-                return super.useOnEntity(stack, user, entity, hand);
+                if (nbtData.getInt("magic") <= 0) return ActionResult.PASS;
+                addMagic(stack, -1);
+                entity.damage(DamageSource.MAGIC, 4);
+
+                return ActionResult.SUCCESS;
         }
 
         /*public void addMagic(ItemStack stack, int magic) {

@@ -1,37 +1,35 @@
 {
-  "parent": "jamm:root",
-  "display": {
-    "icon": {
-      "item": "jamm:dark_amethyst"
+    "parent": "jamm:root",
+    "display": {
+        "icon": {
+            "item": "jamm:dark_amethyst"
+        },
+        "title": {
+            "translate": "advancements.jamm.dark_amethyst.title"
+        },
+        "description": {
+            "translate": "advancements.jamm.dark_amethyst.description"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
     },
-    "title": {
-      "translate": "advancements.jamm.dark_amethyst.title"
+    "criteria": {
+        "dark_amethyst": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "jamm:dark_amethyst"
+                        ]
+                    }
+                ]
+            }
+        }
     },
-    "description": {
-      "translate": "advancements.jamm.dark_amethyst.description"
-    },
-    "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "background": "jamm:textures/block/amethyst_block.png"
-  },
-  "criteria": {
-    "dark_amethyst": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "jamm:dark_amethyst"
-            ]
-          }
+    "requirements": [
+        [
+            "dark_amethyst"
         ]
-      }
-    }
-  },
-  "requirements": [
-    [
-      "dark_amethyst"
     ]
-  ]
 }

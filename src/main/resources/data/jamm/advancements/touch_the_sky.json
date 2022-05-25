@@ -1,0 +1,32 @@
+{
+    "display": {
+        "icon": {
+            "item": "jamm:amethyst"
+        },
+        "title": {
+            "translate": "advancements.jamm.touch_the_sky.title"
+        },
+        "description": {
+            "translate": "advancements.jamm.touch_the_sky.description"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "criteria": {
+        "touch_the_sky": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "location": {
+                    "position": {
+                        "y": 196
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+          [
+              "touch_the_sky"
+          ]
+    ]
+}

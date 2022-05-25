@@ -1,0 +1,35 @@
+{
+    "parent": "jamm:root",
+    "display": {
+        "icon": {
+            "item": "jamm:amethyst"
+        },
+        "title": {
+            "translate": "advancements.jamm.amethyst.title"
+        },
+        "description": {
+            "translate": "advancements.jamm.amethyst.description"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "criteria": {
+        "amethyst": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "jamm:amethyst"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "amethyst"
+        ]
+    ]
+}

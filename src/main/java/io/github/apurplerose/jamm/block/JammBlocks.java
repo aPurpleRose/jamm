@@ -1,6 +1,7 @@
 package io.github.apurplerose.jamm.block;
 
 import io.github.apurplerose.jamm.Jamm;
+import io.github.apurplerose.jamm.fluid.JammFluids;
 import io.github.apurplerose.jamm.item.JammItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -39,13 +40,20 @@ public class JammBlocks {
 
         //<editor-fold desc="misc">
         public static final Block AMETHYST_BLOCK = new Block(FabricBlockSettings.of(Material.STONE).strength(3.0f).requiresTool());
+        public static final Block DARK_AMETHYST_BLOCK = new Block(FabricBlockSettings.of(Material.STONE).strength(4.0f).requiresTool());
         public static final Block STATUS_BLOCK = new StatusBlock();
         public static final Block TEST_BLOCK = new TestBlock();
+        public static final Block LIQUID_STARDUST_BLOCK = new JammFluidBlock(JammFluids.STARDUST_STILL, FabricBlockSettings.of(Material.WATER)
+                .noCollision().nonOpaque().dropsNothing());
         //</editor-fold>
 
 
         private static Block register(String name, Block block){
                 JammItems.register(name, new BlockItem(block, new FabricItemSettings().group(JammItemGroup.JAMM)));
+                return Registry.register(Registry.BLOCK, new Identifier(Jamm.MOD_ID, name), block);
+        }
+
+        private static Block registerWithoutItem(String name, Block block){
                 return Registry.register(Registry.BLOCK, new Identifier(Jamm.MOD_ID, name), block);
         }
 
@@ -76,8 +84,10 @@ public class JammBlocks {
 
                 //<editor-fold desc="misc">
                 register("amethyst_block", AMETHYST_BLOCK);
+                register("dark_amethyst_block", DARK_AMETHYST_BLOCK);
                 register("status_block", STATUS_BLOCK);
                 register("test_block", TEST_BLOCK);
+                registerWithoutItem("liquid_stardust_block", LIQUID_STARDUST_BLOCK);
                 //</editor-fold>
         }
 }

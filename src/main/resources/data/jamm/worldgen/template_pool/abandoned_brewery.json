@@ -1,0 +1,15 @@
+{
+    "name": "jamm:abandoned_brewery",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "location": "jamm:abandoned_brewery",
+                "processors": "jamm:randomize_abandoned_brewery",
+                "projection": "rigid"
+            }
+        }
+    ]
+}

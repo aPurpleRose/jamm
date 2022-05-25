@@ -1,0 +1,15 @@
+{
+    "replace": false,
+    "values": [
+        "jamm:amethyst_wand",
+        "jamm:amethyst_wand_agility_weak",
+        "jamm:amethyst_wand_agility_strong",
+        "jamm:amethyst_wand_heal_weak",
+        "jamm:amethyst_wand_heal_strong",
+        "jamm:amethyst_wand_levitation_weak",
+        "jamm:amethyst_wand_levitation_strong",
+        "jamm:amethyst_wand_freeze",
+        "jamm:amethyst_wand_break",
+        "jamm:dark_amethyst_wand"
+    ]
+}

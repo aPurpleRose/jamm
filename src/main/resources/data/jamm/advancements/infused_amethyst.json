@@ -1,0 +1,35 @@
+{
+    "parent": "jamm:amethyst",
+    "display": {
+        "icon": {
+            "item": "jamm:infused_amethyst"
+        },
+        "title": {
+            "translate": "advancements.jamm.infused_amethyst.title"
+        },
+        "description": {
+            "translate": "advancements.jamm.infused_amethyst.description"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "criteria": {
+        "infused_amethyst": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "jamm:infused_amethyst"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "infused_amethyst"
+        ]
+    ]
+}

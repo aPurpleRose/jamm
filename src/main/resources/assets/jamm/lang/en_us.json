@@ -2,11 +2,6 @@
     "item.jamm.amethyst": "Amethyst",
     "item.jamm.dark_amethyst": "Dark Amethyst",
 
-    "item.jamm.amethyst_wand": "Amethyst Wand",
-    "item.jamm.dark_amethyst_wand": "Dark Amethyst Wand",
-    "item.jamm.dowsing_rod": "Dowsing Rod",
-    "item.jamm.tutorial_book": "Tutorial Book",
-
     "item.jamm.amethyst_axe": "Amethyst Axe",
     "item.jamm.amethyst_hoe": "Amethyst Hoe",
     "item.jamm.amethyst_pickaxe": "Amethyst Pickaxe",
@@ -16,6 +11,7 @@
     "item.jamm.dark_amethyst_pickaxe": "Dark Amethyst Pickaxe",
     "item.jamm.dark_amethyst_sword": "Dark Amethyst Sword",
 
+    "item.jamm.orb": "Orb",
     "item.jamm.agility_orb": "Agility Orb",
     "item.jamm.heal_orb": "Heal Orb",
 
@@ -26,6 +22,22 @@
 
     "item.jamm.amethyst_chestplate_agility": "Amethyst Chestplate Agility",
     "item.jamm.amethyst_chestplate_tank": "Amethyst Chestplate Tank",
+    "item.jamm.amethyst_chestplate_levitation": "Amethyst Chestplate Levitation",
+
+    "item.jamm.amethyst_wand": "Amethyst Wand",
+    "item.jamm.amethyst_wand_agility_weak": "Weak Amethyst Agility Wand",
+    "item.jamm.amethyst_wand_agility_strong": "Strong Amethyst Agility Wand",
+    "item.jamm.amethyst_wand_heal_weak": "Weak Amethyst Heal Wand",
+    "item.jamm.amethyst_wand_heal_strong": "Strong Amethyst Heal Wand",
+    "item.jamm.amethyst_wand_levitation_weak": "Weak Amethyst Levitation Wand",
+    "item.jamm.amethyst_wand_levitation_strong": "Strong Amethyst Levitation Wand",
+    "item.jamm.amethyst_wand_freeze": "Amethyst Freeze Wand",
+    "item.jamm.amethyst_wand_break": "Amethyst Break Wand",
+    "item.jamm.dark_amethyst_wand": "Dark Amethyst Wand",
+
+    "item.jamm.dowsing_rod": "Dowsing Rod",
+    "item.jamm.tutorial_book": "Tutorial Book",
+    "item.jamm.stardust_bucket": "Stardust Bucket",
 
 
 
@@ -40,6 +52,18 @@
 
 
 
+    "effect.jamm.freeze": "Freeze",
+    "effect.jamm.random_teleport": "Random Teleport",
+
+    "item.minecraft.potion.effect.freeze_potion": "Freeze Potion",
+    "item.minecraft.splash_potion.effect.freeze_potion": "Splash Potion of Freeze",
+    "item.minecraft.lingering_potion.effect.freeze_potion": "Lingering Potion of Freeze",
+    "item.minecraft.potion.effect.random_teleport_potion": "Random Teleportation Potion",
+    "item.minecraft.splash_potion.effect.random_teleport_potion": "Splash Potion of Random Teleportation",
+    "item.minecraft.lingering_potion.effect.random_teleport_potion": "Lingering Potion of Random Teleportation",
+
+
+
     "enchantment.jamm.launch": "Launch",
     "enchantment.jamm.lightning_striker": "Lightning Striker",
 
@@ -49,10 +73,19 @@
 
 
 
-    "advancements.jamm.root.title": "Just the beginning",
-    "advancements.jamm.root.description": "Your journey starts now.",
+    "advancements.jamm.amethyst.title": "Doesn't this already exist?",
     "advancements.jamm.dark_amethyst.title": "Come to the dark side",
-    "advancements.jamm.dark_amethyst.description": "We have cookies. (pretty crunchy, but what do you expect from stone cookies)",
+    "advancements.jamm.dark_amethyst.description": "We have cookies.",
+    "advancements.jamm.deeper.title": "Deeper",
+    "advancements.jamm.deeper.description": "Is the signal lost??",
+    "advancements.jamm.first_wand.title": "Fancy stick",
+    "advancements.jamm.infused_amethyst.title": "Uh shiny",
+    "advancements.jamm.killed_with_wand.title": "Avada Kedavra",
+    "advancements.jamm.root.title": "Jamm",
+    "advancements.jamm.root.description": "Your journey starts now.",
+    "advancements.jamm.touch_the_sky.title": "Touch the sky",
+    "advancements.jamm.touch_the_sky.description": "They seem to unfold their powers here.",
+    "advancements.jamm.use_wand.title": "Abracadabra",
 
 
 

@@ -1,0 +1,8 @@
+{
+    "name": "Jamm Journal",
+    "landing_text": "I decided to write everything down I might find along the way while exploring this weird but wonderful world.",
+    "version": 1,
+    "book_texture": "patchouli:textures/gui/book_purple.png",
+    "model": "patchouli:book_purple",
+    "creative_tab": "jamm.jamm"
+}

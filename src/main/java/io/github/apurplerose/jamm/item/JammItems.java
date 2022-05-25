@@ -1,18 +1,18 @@
 package io.github.apurplerose.jamm.item;
 
 import io.github.apurplerose.jamm.Jamm;
+import io.github.apurplerose.jamm.effect.JammEffects;
+import io.github.apurplerose.jamm.fluid.JammFluids;
 import io.github.apurplerose.jamm.item.custom.*;
 import io.github.apurplerose.jamm.item.custom.armor.AmethystChestplateArmorItem;
+import io.github.apurplerose.jamm.item.custom.armor.SaturationAmethystChestplate;
 import io.github.apurplerose.jamm.item.custom.tool.*;
 import io.github.apurplerose.jamm.item.custom.wand.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -21,6 +21,7 @@ public class JammItems {
         //<editor-fold desc="resources">
         public static final Item AMETHYST = new Item(defaults());
         public static final Item DARK_AMETHYST = new DarkAmethystItem(defaults());
+        public static final Item INFUSED_AMETHYST = new Item(defaults());
         //</editor-fold>
 
         //<editor-fold desc="complex tools">
@@ -50,18 +51,19 @@ public class JammItems {
         public static final Item AMETHYST_LEGGINGS = new ArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.LEGS, defaults());
         public static final Item AMETHYST_BOOTS = new ArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.FEET, defaults());
 
+        // material has to be different, armors with the same material get the same effect because of the material to effect map, maybe this is fixable
         public static final Item AMETHYST_CHESTPLATE_AGILITY = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.CHEST, defaults(),
                 new StatusEffectInstance(StatusEffects.JUMP_BOOST, 20, 2, false, false),
                 new StatusEffectInstance(StatusEffects.SPEED, 20, 2, false, false));
         public static final Item AMETHYST_CHESTPLATE_TANK = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_TANK, EquipmentSlot.CHEST, defaults(),
-                new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 2, false, false)); // why is it a different material?
-        public static final Item AMETHYST_CHESTPLATE_LEVITATION = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.CHEST, defaults(),
+                new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 2, false, false));
+        public static final Item AMETHYST_CHESTPLATE_LEVITATION = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_LEVITATION, EquipmentSlot.CHEST, defaults(),
                 //new StatusEffectInstance(StatusEffects.LEVITATION, 20, 2, false, false),
                 new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 2, false, false));
                         // improvised so there is something, should enable flying like creative
                         // OR: high jump when normally jumping and giving levitation when holding down space until it is stopped
                         // btw I think the durations don't add up for the chestplate,
-                                // the effect lingers too long after taking them of because of 200 instead of 20 how it was before, idk why changed
+        public static final Item AMETHYST_CHESTPLATE_SATURATION = new SaturationAmethystChestplate(JammArmorMaterial.AMETHYST_SATURATION, EquipmentSlot.CHEST, defaults());
 
         /* plan:
          * armor gives effects like high jump and speed and ..., maybe a custom paranoia effect when the armor gives too much strong effects
@@ -99,11 +101,14 @@ public class JammItems {
                 new StatusEffectInstance(StatusEffects.SPEED, 600, 2, false, false));
 
         public static final Item AMETHYST_WAND_HEAL_WEAK = new AmethystWandItem(
-                new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 200, 1, false, false),
-                new StatusEffectInstance(StatusEffects.REGENERATION, 200, 1, false, false));
+                new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 0, 0, false, false),
+                new StatusEffectInstance(StatusEffects.REGENERATION, 60, 0, false, false));
         public static final Item AMETHYST_WAND_HEAL_STRONG = new AmethystWandItem(
-                new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 600, 2, false, false),
-                new StatusEffectInstance(StatusEffects.REGENERATION, 600, 2, false, false));
+                new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 0, 1, false, false),
+                new StatusEffectInstance(StatusEffects.REGENERATION, 60, 1, false, false));
+
+        public static final Item AMETHYST_WAND_FREEZE = new AmethystWandItem(
+                new StatusEffectInstance(JammEffects.FREEZE, 100, 0, false, false));
 
         public static final Item AMETHYST_BREAK_WAND = new AmethystBreakWandItem();
         //</editor-fold>
@@ -112,6 +117,7 @@ public class JammItems {
         public static final Item DARK_AMETHYST_WAND = new DarkAmethystWandItem();
         public static final Item DOWSING_ROD = new DowsingRodItem();
         public static final Item TUTORIAL_BOOK = new TutorialBookItem();
+        public static final Item STARDUST_BUCKET = new BucketItem(JammFluids.STARDUST_STILL, new FabricItemSettings().group(JammItemGroup.JAMM).maxCount(1));
         //</editor-fold>
 
 
@@ -130,6 +136,7 @@ public class JammItems {
                 //<editor-fold desc="resources">
                 register("amethyst", AMETHYST);
                 register("dark_amethyst", DARK_AMETHYST);
+                register("infused_amethyst", INFUSED_AMETHYST);
                 //</editor-fold>
 
                 //<editor-fold desc="tools">
@@ -160,6 +167,7 @@ public class JammItems {
                 register("amethyst_chestplate_agility", AMETHYST_CHESTPLATE_AGILITY);
                 register("amethyst_chestplate_tank", AMETHYST_CHESTPLATE_TANK);
                 register("amethyst_chestplate_levitation", AMETHYST_CHESTPLATE_LEVITATION);
+                register("amethyst_chestplate_saturation", AMETHYST_CHESTPLATE_SATURATION);
                 //</editor-fold>
 
                 //<editor-fold desc="wands">
@@ -170,12 +178,15 @@ public class JammItems {
                 register("amethyst_wand_heal_strong", AMETHYST_WAND_HEAL_STRONG);
                 register("amethyst_wand_levitation_weak", AMETHYST_WAND_LEVITATION_WEAK);
                 register("amethyst_wand_levitation_strong", AMETHYST_WAND_LEVITATION_STRONG);
-                register("amethyst_break_wand", AMETHYST_BREAK_WAND);
+                register("amethyst_wand_freeze", AMETHYST_WAND_FREEZE);
+                register("amethyst_wand_break", AMETHYST_BREAK_WAND);
+
+                register("dark_amethyst_wand", DARK_AMETHYST_WAND);
                 //</editor-fold>
 
                 //<editor-fold desc="misc">
-                register("dark_amethyst_wand", DARK_AMETHYST_WAND);
                 register("tutorial_book", TUTORIAL_BOOK);
+                register("stardust_bucket", STARDUST_BUCKET);
                 //</editor-fold>
 
                 // tests

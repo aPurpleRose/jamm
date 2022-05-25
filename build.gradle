@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.11-SNAPSHOT'
+	id 'fabric-loom' version '0.12-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -15,6 +15,9 @@ repositories {
 		name = "CottonMC"
 		url = "https://server.bbkr.space/artifactory/libs-release"
 	}
+	maven {
+		url 'https://maven.blamejared.com'
+	}
 }
 
 dependencies {
@@ -29,7 +32,10 @@ dependencies {
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
 
-	modImplementation include("io.github.cottonmc:LibGui:5.3.2+1.18.2")
+	modImplementation include("io.github.cottonmc:LibGui:5.4.1+1.18.2")
+
+	// https://maven.blamejared.com/vazkii/patchouli/Patchouli/
+	modImplementation "vazkii.patchouli:Patchouli:1.18.2-67-FABRIC"
 }
 
 processResources {

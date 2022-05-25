@@ -41,4 +41,28 @@ public class LightningStrikerEnchantment extends Enchantment {
 
                 super.onTargetDamaged(user, target, level);
         }
+
+        @Override
+        public void onUserDamaged(LivingEntity user, Entity attacker, int level) {
+                if (!user.world.isClient()) {
+                        ServerWorld world = (ServerWorld) user.world;
+                        PlayerEntity player = (PlayerEntity) user;
+                        BlockPos pos = attacker.getBlockPos();
+
+                        if (level == 1) {
+                                EntityType.LIGHTNING_BOLT.spawn(world, null, null, player, pos,
+                                        SpawnReason.TRIGGERED, true, true);
+                        }
+
+                        if (level == 2) {
+                                EntityType.LIGHTNING_BOLT.spawn(world, null, null, player, pos,
+                                        SpawnReason.TRIGGERED, true, true);
+
+                                EntityType.LIGHTNING_BOLT.spawn(world, null, null, player, pos,
+                                        SpawnReason.TRIGGERED, true, true);
+                        }
+                }
+
+                super.onUserDamaged(user, attacker, level);
+        }
 }

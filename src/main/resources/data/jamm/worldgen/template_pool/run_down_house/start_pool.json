@@ -5,10 +5,10 @@
         {
             "weight": 1,
             "element": {
+                "element_type": "minecraft:single_pool_element",
                 "location": "jamm:run_down_house_left_side",
                 "processors": "minecraft:empty",
-                "projection": "rigid",
-                "element_type": "minecraft:single_pool_element"
+                "projection": "rigid"
             }
         }
     ]

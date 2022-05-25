@@ -19,18 +19,6 @@ public abstract class AbstractArmorItem extends ArmorItem {
 
 
         protected abstract void evaluateArmorEffects(PlayerEntity player);
-        /*protected void evaluateArmorEffects(PlayerEntity player) {
-                for (Map.Entry<ArmorMaterial, StatusEffect[]> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
-                        ArmorMaterial material = entry.getKey();
-                        StatusEffect[] effects = entry.getValue();
-
-                        if (hasCorrectSet(material, player)) {
-                                for (StatusEffect effect : effects) {
-                                        addStatusEffect(player, effect);
-                                }
-                        }
-                }
-        }*/
 
         protected boolean hasFullSet(PlayerEntity player) {
                 ItemStack boots = player.getInventory().getArmorStack(0);

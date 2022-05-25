@@ -6,19 +6,16 @@
             "entries": [
                 {
                     "type": "minecraft:alternatives",
-                    "children":
-                    [
+                    "children": [
                         {
                             "type": "minecraft:item",
                             "name": "jamm:dark_amethyst_ore",
-                            "conditions":
-                            [
+                            "conditions": [
                                 {
                                     "condition": "minecraft:match_tool",
                                     "predicate":
                                     {
-                                        "enchantments":
-                                        [
+                                        "enchantments": [
                                             {
                                                 "enchantment": "minecraft:silk_touch",
                                                 "levels": 1
@@ -30,7 +27,17 @@
                         },
                         {
                             "type": "minecraft:item",
-                            "name": "jamm:dark_amethyst"
+                            "name": "jamm:dark_amethyst",
+                            "functions": [
+                                {
+                                    "function": "minecraft:apply_bonus",
+                                    "enchantment": "minecraft:fortune",
+                                    "formula": "minecraft:ore_drops"
+                                },
+                                {
+                                    "function": "minecraft:explosion_decay"
+                                }
+                            ]
                         }
                     ]
                 }

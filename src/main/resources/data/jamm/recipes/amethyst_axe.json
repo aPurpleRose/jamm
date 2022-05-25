@@ -1,19 +1,19 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "##",
-    "#A",
-    " A"
-  ],
-  "key": {
-    "#": {
-      "item": "jamm:amethyst"
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "##",
+        "#A",
+        " A"
+    ],
+    "key": {
+        "#": {
+            "item": "jamm:amethyst"
+        },
+        "A": {
+            "item": "minecraft:stick"
+        }
     },
-    "A": {
-      "item": "minecraft:stick"
+    "result": {
+        "item": "jamm:amethyst_axe"
     }
-  },
-  "result": {
-    "item": "jamm:amethyst_axe"
-  }
 }

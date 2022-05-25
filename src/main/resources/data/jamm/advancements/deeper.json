@@ -1,0 +1,32 @@
+{
+    "display": {
+        "icon": {
+            "item": "jamm:amethyst"
+        },
+        "title": {
+            "translate": "advancements.jamm.deeper.title"
+        },
+        "description": {
+            "translate": "advancements.jamm.deeper.description"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "criteria": {
+        "deeper": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "location": {
+                    "position": {
+                        "y": 0
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+          [
+              "deeper"
+          ]
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#A#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:gold_ingot"
+        },
+        "A": {
+            "item": "jamm:amethyst"
+        }
+    },
+    "result": {
+        "item": "jamm:orb"
+    }
+}

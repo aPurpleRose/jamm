@@ -10,6 +10,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.scoreboard.ScoreboardCriterion;
+import net.minecraft.stat.Stat;
+import net.minecraft.stat.StatType;
+import net.minecraft.stat.Stats;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -22,7 +27,8 @@ import java.util.Map;
 public class AmethystChestplateArmorItem extends AbstractArmorItem {
 
         private final ImmutableMap<ArmorMaterial, StatusEffectInstance[]> MATERIAL_TO_EFFECT_MAP;
-        private final int MAX_MAGIC = 200;
+        StatusEffectInstance[] EFFECTS;
+        private final int MAX_MAGIC = 1000;
         private final ArmorMaterial restOfArmor = JammArmorMaterial.AMETHYST;
 
 
@@ -31,6 +37,7 @@ public class AmethystChestplateArmorItem extends AbstractArmorItem {
                 NbtCompound nbtData = new NbtCompound();
                 nbtData.putInt("magic", 0);
                 MATERIAL_TO_EFFECT_MAP = (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance[]>()).put(material, effects).build();
+                EFFECTS = effects;
         }
 
         @Override

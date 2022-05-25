@@ -1,34 +1,35 @@
 package io.github.apurplerose.jamm.world.gen;
 
-import io.github.apurplerose.jamm.Jamm;
+import io.github.apurplerose.jamm.world.features.JammConfiguredFeatures;
+import io.github.apurplerose.jamm.world.features.JammPlacedFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.event.Event;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.chunk.FlatChunkGenerator;
-import net.minecraft.world.gen.feature.StructureFeature;
+import net.minecraft.world.gen.GenerationStep;
 
-import java.util.HashMap;
-
-/*public class JammWorldGen {
+public class JammWorldGen {
 
         public static void generateJammWorldGen() {
-                JammTreeGen.generateTrees();
+                //JammTreeGen.generateTrees();
 
-                JammStructures.registerStructureFeatures();
-                JammConfiguredStructures.registerConfiguredStructures();
-                addStructureSpawningToDimensionsAndBiomes();
+                //JammStructures.registerStructureFeatures();
+                //JammConfiguredStructures.registerConfiguredStructures();
+                //addStructureSpawningToDimensionsAndBiomes();
+
+                JammConfiguredFeatures.registerConfiguredFeatures();
+                JammPlacedFeatures.registerPlacedFeatures();
+
+                addFeatures();
         }
 
 
+        public static void addFeatures() {
+                BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, JammPlacedFeatures.AMETHYST_ORE_KEY);
+                BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, JammPlacedFeatures.DARK_AMETHYST_ORE_KEY);
+        }
+
+}
+
+/*
         public static void addStructureSpawningToDimensionsAndBiomes() {
                 BiomeModifications.addStructure(
                         BiomeSelectors.categories(
@@ -67,5 +68,4 @@ import java.util.HashMap;
                         ((StructuresConfigAccessor)worldStructureConfig).setStructures(tempMap);
                 });
         }
-
-}*/
+*/

@@ -1,0 +1,35 @@
+{
+    "parent": "jamm:first_wand",
+    "display": {
+        "icon": {
+            "item": "jamm:amethyst_wand"
+        },
+        "title": {
+            "translate": "advancements.jamm.use_wand.title"
+        },
+        "description": {
+            "translate": "advancements.jamm.use_wand.description"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "criteria": {
+        "use_wand": {
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "player": {
+                    "equipment": {
+                        "mainhand": {
+                            "tag": "jamm:wands"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "use_wand"
+        ]
+    ]
+}

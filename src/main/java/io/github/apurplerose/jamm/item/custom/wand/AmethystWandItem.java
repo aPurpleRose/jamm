@@ -50,12 +50,11 @@ public class AmethystWandItem extends Item {
 
         public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
                 NbtCompound nbtData = stack.getNbt();
-                int magic;
+                int magic = 0;
 
                 if (nbtData == null) {
-                        magic = 0;
                         nbtData = new NbtCompound();
-                        nbtData.putInt("magic", magic);
+                        nbtData.putInt("magic", 0);
                         stack.setNbt(nbtData);
                 } else {
                         magic = nbtData.getInt("magic");
@@ -77,18 +76,18 @@ public class AmethystWandItem extends Item {
 
         @Override
         public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
-                if (!user.isSneaking()) {
-                        for (StatusEffectInstance effect : EFFECTS) {
-                                NbtCompound nbtData = stack.getNbt();
-                                if (nbtData.getInt("magic") > 0) {
-                                        addMagic(stack, -1);
-                                        entity.addStatusEffect(new StatusEffectInstance(effect));
-                                }
+                if (EFFECTS == null) return ActionResult.PASS;
+                if (user.isSneaking()) return ActionResult.PASS;
 
+                for (StatusEffectInstance effect : EFFECTS) {
+                        NbtCompound nbtData = stack.getNbt();
+                        if (nbtData.getInt("magic") > 0) {
+                                addMagic(stack, -1);
+                                entity.addStatusEffect(new StatusEffectInstance(effect));
                         }
-                }
 
-                return super.useOnEntity(stack, user, entity, hand);
+                }
+                return ActionResult.SUCCESS;
         }
 
 }

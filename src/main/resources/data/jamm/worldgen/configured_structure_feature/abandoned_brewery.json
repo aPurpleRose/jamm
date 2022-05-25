@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:village",
+    "config": {
+        "start_pool": "jamm:abandoned_brewery",
+        "size": 1
+    },
+    "biomes": "#jamm:has_structure/tower_biomes",
+    "adapt_noise": true,
+    "spawn_overrides": {
+        "creature": {
+            "bounding_box": "piece",
+            "spawns": [
+                {
+                    "type": "minecraft:zombie_villager",
+                    "weight": 1,
+                    "minCount": 0,
+                    "maxCount": 2
+                },
+                {
+                    "type": "minecraft:cave_spider",
+                    "weight": 1,
+                    "minCount": 1,
+                    "maxCount": 2
+                }
+            ]
+        }
+    }
+}
