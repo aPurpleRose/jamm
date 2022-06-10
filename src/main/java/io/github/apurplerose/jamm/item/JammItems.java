@@ -41,8 +41,8 @@ public class JammItems {
 
         //<editor-fold desc="orbs">
         public static final Item ORB = new Item(defaults());
-        public static final Item AGILITY_ORB = new Item(defaults());
-        public static final Item HEAL_ORB = new Item(defaults());
+        public static final Item ORB_AGILITY = new Item(defaults());
+        public static final Item ORB_HEALING = new Item(defaults());
         //</editor-fold>
 
         //<editor-fold desc="armor">
@@ -86,38 +86,46 @@ public class JammItems {
         //</editor-fold>
 
         //<editor-fold desc="wands">
-        public static final Item AMETHYST_WAND = new AmethystWandItem();
+        public static final Item AMETHYST_WAND = new WandItem();
 
-        public static final Item AMETHYST_WAND_LEVITATION_WEAK = new AmethystWandItem(
-                new StatusEffectInstance(StatusEffects.LEVITATION, 100, 1, false, false));
-        public static final Item AMETHYST_WAND_LEVITATION_STRONG = new AmethystWandItem(
-                new StatusEffectInstance(StatusEffects.LEVITATION, 100, 3, false, false));
-
-        public static final Item AMETHYST_WAND_AGILITY_WEAK = new AmethystWandItem(
+        public static final Item WAND_AGILITY_WEAK = new EffectWandItem(
                 new StatusEffectInstance(StatusEffects.JUMP_BOOST, 200, 1, false, false),
                 new StatusEffectInstance(StatusEffects.SPEED, 200, 1, false, false));
-        public static final Item AMETHYST_WAND_AGILITY_STRONG = new AmethystWandItem(
-                new StatusEffectInstance(StatusEffects.JUMP_BOOST, 600, 2, false, false),
-                new StatusEffectInstance(StatusEffects.SPEED, 600, 2, false, false));
+        public static final Item WAND_AGILITY_STRONG = new EffectWandItem(
+                new StatusEffectInstance(StatusEffects.JUMP_BOOST, 600, 3, false, false),
+                new StatusEffectInstance(StatusEffects.SPEED, 600, 3, false, false));
 
-        public static final Item AMETHYST_WAND_HEAL_WEAK = new AmethystWandItem(
-                new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 0, 0, false, false),
+        public static final Item WAND_HEALING_WEAK = new EffectWandItem(
+                //new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 0, 0, false, false),
                 new StatusEffectInstance(StatusEffects.REGENERATION, 60, 0, false, false));
-        public static final Item AMETHYST_WAND_HEAL_STRONG = new AmethystWandItem(
-                new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 0, 1, false, false),
+        public static final Item WAND_HEALING_STRONG = new EffectWandItem(
+                //new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 0, 1, false, false),
                 new StatusEffectInstance(StatusEffects.REGENERATION, 60, 1, false, false));
 
-        public static final Item AMETHYST_WAND_FREEZE = new AmethystWandItem(
+        public static final Item WAND_LEVITATION_WEAK = new EffectWandItem(
+                new StatusEffectInstance(StatusEffects.LEVITATION, 100, 0, false, false)); //1
+        public static final Item WAND_LEVITATION_STRONG = new EffectWandItem(
+                new StatusEffectInstance(StatusEffects.LEVITATION, 100, 2, false, false)); //3
+
+
+        public static final Item AMETHYST_WAND_FREEZE = new EffectWandItem(
                 new StatusEffectInstance(JammEffects.FREEZE, 100, 0, false, false));
 
-        public static final Item AMETHYST_BREAK_WAND = new AmethystBreakWandItem();
+        public static final Item BREAK_WAND = new BreakWandItem();
+        public static final Item WAND_LAUNCH_WEAK = new LaunchWand();
+        public static final Item WAND_REPULSION_WEAK = new RepulsionWand();
+        public static final Item WAND_SLOW_FALLING_WEAK = new SlowFallingWand();
+
+        public static final Item DARK_AMETHYST_WAND = new WandItem();
+        public static final Item WAND_LAUNCH_STRONG = new LaunchWand(100, true);
+        public static final Item WAND_REPULSION_STRONG = new RepulsionWand(100, true);
         //</editor-fold>
 
         //<editor-fold desc="misc items">
-        public static final Item DARK_AMETHYST_WAND = new DarkAmethystWandItem();
         public static final Item DOWSING_ROD = new DowsingRodItem();
         public static final Item TUTORIAL_BOOK = new TutorialBookItem();
         public static final Item STARDUST_BUCKET = new BucketItem(JammFluids.STARDUST_STILL, new FabricItemSettings().group(JammItemGroup.JAMM).maxCount(1));
+        public static final Item SUMMONERS_WAND = new SummonersWand();
         //</editor-fold>
 
 
@@ -152,8 +160,8 @@ public class JammItems {
 
                 //<editor-fold desc="orbs">
                 register("orb", ORB);
-                register("agility_orb", AGILITY_ORB);
-                register("heal_orb", HEAL_ORB);
+                register("agility_orb", ORB_AGILITY);
+                register("heal_orb", ORB_HEALING);
                 //</editor-fold>
 
                 //<editor-fold desc="armor">
@@ -172,16 +180,22 @@ public class JammItems {
 
                 //<editor-fold desc="wands">
                 register("amethyst_wand", AMETHYST_WAND);
-                register("amethyst_wand_agility_weak", AMETHYST_WAND_AGILITY_WEAK);
-                register("amethyst_wand_agility_strong", AMETHYST_WAND_AGILITY_STRONG);
-                register("amethyst_wand_heal_weak", AMETHYST_WAND_HEAL_WEAK);
-                register("amethyst_wand_heal_strong", AMETHYST_WAND_HEAL_STRONG);
-                register("amethyst_wand_levitation_weak", AMETHYST_WAND_LEVITATION_WEAK);
-                register("amethyst_wand_levitation_strong", AMETHYST_WAND_LEVITATION_STRONG);
+                register("wand_agility_weak", WAND_AGILITY_WEAK);
+                register("wand_agility_strong", WAND_AGILITY_STRONG);
+                register("wand_healing_weak", WAND_HEALING_WEAK);
+                register("wand_healing_strong", WAND_HEALING_STRONG);
+                register("wand_levitation_weak", WAND_LEVITATION_WEAK);
+                register("wand_levitation_strong", WAND_LEVITATION_STRONG);
+
                 register("amethyst_wand_freeze", AMETHYST_WAND_FREEZE);
-                register("amethyst_wand_break", AMETHYST_BREAK_WAND);
+                register("break_wand", BREAK_WAND);
+                register("wand_launch_weak", WAND_LAUNCH_WEAK);
+                register("wand_repulsion_weak", WAND_REPULSION_WEAK);
+                register("wand_slow_falling_weak", WAND_SLOW_FALLING_WEAK);
 
                 register("dark_amethyst_wand", DARK_AMETHYST_WAND);
+                register("wand_launch_strong", WAND_LAUNCH_STRONG);
+                register("wand_repulsion_strong", WAND_REPULSION_STRONG);
                 //</editor-fold>
 
                 //<editor-fold desc="misc">
@@ -191,6 +205,7 @@ public class JammItems {
 
                 // tests
                 register("dowsing_rod", DOWSING_ROD);
+                register("summoners_wand", SUMMONERS_WAND);
         }
 
         public static Item.Settings defaults()

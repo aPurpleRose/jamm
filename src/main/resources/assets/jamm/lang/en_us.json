@@ -89,10 +89,9 @@
 
 
 
-    "tooltip.item.jamm.amethyst_wand": "%d magic out of %d max magic.",
     "tooltip.item.jamm.dark_amethyst": "It is emitting a strong energy.",
-
     "tooltip.item.jamm.dowsing_rod": "Detects magical valuables below a clicked block.",
+    "tooltip.item.jamm.wand": "%d magic out of %d max magic.",
 
     "tooltip_1.item.jamm.amethyst_chestplate": "Right click on an altar while wearing to refill.",
     "tooltip_2.item.jamm.amethyst_chestplate": "%d magic out of %d max magic."

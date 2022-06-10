@@ -1,10 +1,7 @@
 package io.github.apurplerose.jamm.item.custom.wand;
 
 import io.github.apurplerose.jamm.block.JammBlocks;
-import io.github.apurplerose.jamm.item.JammItemGroup;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -23,14 +20,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class AmethystBreakWandItem extends AmethystWandItem {
+public class BreakWandItem extends WandItem {
 
-        private static final Settings SETTINGS = new FabricItemSettings()
-                .group(JammItemGroup.JAMM)
-                .maxCount(1);
         private final int MAX_MAGIC = 700;
 
-        public AmethystBreakWandItem() {
+        public BreakWandItem() {
                 super();
         }
 
@@ -41,9 +35,10 @@ public class AmethystBreakWandItem extends AmethystWandItem {
                 ItemStack stack = context.getStack();
                 BlockState state = world.getBlockState(pos);
                 int hardness = (int)state.getHardness(world, pos);
+
                 NbtCompound nbtData = stack.getNbt();
 
-                if (nbtData.getInt("magic") - hardness < 0 || state.isOf(JammBlocks.LUNAR_ALTAR) || hardness == -1) return super.useOnBlock(context);
+                if (nbtData.getInt("magic") - hardness < 0 || state.isOf(JammBlocks.LUNAR_ALTAR) || hardness == -1) return ActionResult.FAIL;
 
                 addMagic(stack, -hardness);
                 world.breakBlock(pos, true);
@@ -61,12 +56,6 @@ public class AmethystBreakWandItem extends AmethystWandItem {
 
                 return ActionResult.SUCCESS;
         }
-
-        /*public void addMagic(ItemStack stack, int magic) {
-                NbtCompound nbtData = stack.getNbt();
-                nbtData.putInt("magic", nbtData.getInt("magic") + magic);
-                stack.setNbt(nbtData);
-        }*/
 
         public int missingMagic(ItemStack stack) {
                 NbtCompound nbtData = stack.getNbt();
@@ -86,7 +75,7 @@ public class AmethystBreakWandItem extends AmethystWandItem {
                         magic = nbtData.getInt("magic");
                 }
 
-                tooltip.add(new TranslatableText("tooltip.item.jamm.amethyst_wand", magic, MAX_MAGIC).formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
+                tooltip.add(new TranslatableText("tooltip.item.jamm.wand", magic, MAX_MAGIC).formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
         }
 
 }

@@ -3,7 +3,7 @@ package io.github.apurplerose.jamm.block;
 import io.github.apurplerose.jamm.blockentity.JammBlockEntities;
 import io.github.apurplerose.jamm.blockentity.LunarAltarBlockEntity;
 import io.github.apurplerose.jamm.item.custom.armor.AbstractArmorItem;
-import io.github.apurplerose.jamm.item.custom.wand.AmethystWandItem;
+import io.github.apurplerose.jamm.item.custom.wand.WandItem;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -45,17 +45,18 @@ public class LunarAltarBlock extends AbstractAltarBlock {
 
                                 // wand
                                 ItemStack inHand = player.getStackInHand(hand);
-                                if (inHand.getItem() instanceof AmethystWandItem awi) {
+                                if (inHand.getItem() instanceof WandItem wi) {
                                         magic = lae.getMagic();
-                                        missing_magic = awi.missingMagic(inHand);
+                                        missing_magic = wi.missingMagic(inHand);
 
                                         if (magic >= missing_magic) {
                                                 lae.removeMagic(missing_magic);
-                                                awi.addMagic(inHand, missing_magic);
+                                                wi.addMagic(inHand, missing_magic);
                                         } else {
                                                 lae.removeMagic(magic);
-                                                awi.addMagic(inHand, magic);
+                                                wi.addMagic(inHand, magic);
                                         }
+                                        return ActionResult.SUCCESS;
                                 }
 
                                 // armor
@@ -71,6 +72,7 @@ public class LunarAltarBlock extends AbstractAltarBlock {
                                                 lae.removeMagic(magic);
                                                 aai.addMagic(chestplate, magic);
                                         }
+                                        return ActionResult.SUCCESS;
                                 }
                         }
                 }

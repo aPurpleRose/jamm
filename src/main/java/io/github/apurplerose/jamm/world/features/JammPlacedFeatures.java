@@ -52,26 +52,4 @@ public class JammPlacedFeatures {
         }
 
 
-
-
-        /*public static final RegistryKey<PlacedFeature> MYSTICAL_TREE_KEY = registerKey("mystical_spawn");
-
-
-        public static final PlacedFeature MYSTICAL_PLACED = registerPlacedFeature("mystical_spawn",
-                JammConfiguredFeatures.MYSTICAL_TREE_RANDOM.withPlacement(VegetationPlacedFeatures.modifiers(
-                        PlacedFeatures.createCountExtraModifier(1, 0.1f, 2))));
-
-
-        public static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
-                return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
-        }
-
-        public static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
-                return modifiers(CountPlacementModifier.of(count), heightModifier);
-        }
-
-        private static PlacedFeature registerPlacedFeature(String name, PlacedFeature placedFeature) {
-                return Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(Jamm.MOD_ID, name), placedFeature);
-        }*/
-
 }

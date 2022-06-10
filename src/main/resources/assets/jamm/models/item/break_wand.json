@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "jamm:item/wand/amethyst_wand_break"
+    "layer0": "jamm:item/wand/break_wand"
   }
 }

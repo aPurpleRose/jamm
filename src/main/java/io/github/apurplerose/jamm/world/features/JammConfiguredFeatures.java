@@ -19,7 +19,7 @@ public class JammConfiguredFeatures {
                 (Feature.ORE, new OreFeatureConfig(
                         OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
                         JammBlocks.DARK_AMETHYST_ORE.getDefaultState(),
-                        7 // vein size
+                        5 // vein size
                 ));
 
 
