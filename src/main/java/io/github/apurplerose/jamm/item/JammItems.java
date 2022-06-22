@@ -16,7 +16,8 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class JammItems {
+public class JammItems
+{
 
         //<editor-fold desc="resources">
         public static final Item AMETHYST = new Item(defaults());
@@ -87,7 +88,9 @@ public class JammItems {
 
         //<editor-fold desc="wands">
         public static final Item AMETHYST_WAND = new WandItem();
+        public static final Item DARK_AMETHYST_WAND = new WandItem();
 
+        //<editor-fold desc="effect wands">
         public static final Item WAND_AGILITY_WEAK = new EffectWandItem(
                 new StatusEffectInstance(StatusEffects.JUMP_BOOST, 200, 1, false, false),
                 new StatusEffectInstance(StatusEffects.SPEED, 200, 1, false, false));
@@ -107,25 +110,36 @@ public class JammItems {
         public static final Item WAND_LEVITATION_STRONG = new EffectWandItem(
                 new StatusEffectInstance(StatusEffects.LEVITATION, 100, 2, false, false)); //3
 
+        public static final Item WAND_SLOW_FALLING_WEAK = new EffectWandItem(
+                new StatusEffectInstance(StatusEffects.SLOW_FALLING, 200, 0, false, false)
+        );
+        //</editor-fold>
 
-        public static final Item AMETHYST_WAND_FREEZE = new EffectWandItem(
-                new StatusEffectInstance(JammEffects.FREEZE, 100, 0, false, false));
+        /*public static final Item AMETHYST_WAND_FREEZE = new EffectWandItem(
+                new StatusEffectInstance(JammEffects.FREEZE, 100, 0, false, false));*/
 
+        //<editor-fold desc="special wands">
         public static final Item BREAK_WAND = new BreakWandItem();
-        public static final Item WAND_LAUNCH_WEAK = new LaunchWand();
-        public static final Item WAND_REPULSION_WEAK = new RepulsionWand();
-        public static final Item WAND_SLOW_FALLING_WEAK = new SlowFallingWand();
+        public static final Item FIREBALL_WAND = new FireballWand();
+        public static final Item SUMMONERS_WAND = new SummonersWand();
 
-        public static final Item DARK_AMETHYST_WAND = new WandItem();
+        //<editor-fold desc="custom effect wands">
+        public static final Item WAND_LAUNCH_WEAK = new LaunchWand();
         public static final Item WAND_LAUNCH_STRONG = new LaunchWand(100, true);
+        public static final Item WAND_REPULSION_WEAK = new RepulsionWand();
         public static final Item WAND_REPULSION_STRONG = new RepulsionWand(100, true);
         //</editor-fold>
+        //</editor-fold>
+
 
         //<editor-fold desc="misc items">
         public static final Item DOWSING_ROD = new DowsingRodItem();
         public static final Item TUTORIAL_BOOK = new TutorialBookItem();
         public static final Item STARDUST_BUCKET = new BucketItem(JammFluids.STARDUST_STILL, new FabricItemSettings().group(JammItemGroup.JAMM).maxCount(1));
-        public static final Item SUMMONERS_WAND = new SummonersWand();
+
+
+        public static final Item MAGIC_BULLET = new MagicBulletItem(defaults().maxCount(16));
+
         //</editor-fold>
 
 
@@ -137,8 +151,8 @@ public class JammItems {
                 return Registry.register(Registry.ITEM, id, item);
         }
 
-        public static void registerItems(){
-
+        public static void registerItems()
+        {
                 System.out.println("Registering Mod Items for " + Jamm.MOD_ID);
 
                 //<editor-fold desc="resources">
@@ -187,8 +201,10 @@ public class JammItems {
                 register("wand_levitation_weak", WAND_LEVITATION_WEAK);
                 register("wand_levitation_strong", WAND_LEVITATION_STRONG);
 
-                register("amethyst_wand_freeze", AMETHYST_WAND_FREEZE);
+                //register("amethyst_wand_freeze", AMETHYST_WAND_FREEZE);
                 register("break_wand", BREAK_WAND);
+                register("fireball_wand", FIREBALL_WAND);
+
                 register("wand_launch_weak", WAND_LAUNCH_WEAK);
                 register("wand_repulsion_weak", WAND_REPULSION_WEAK);
                 register("wand_slow_falling_weak", WAND_SLOW_FALLING_WEAK);
@@ -206,6 +222,7 @@ public class JammItems {
                 // tests
                 register("dowsing_rod", DOWSING_ROD);
                 register("summoners_wand", SUMMONERS_WAND);
+                register("magic_bullet", MAGIC_BULLET);
         }
 
         public static Item.Settings defaults()

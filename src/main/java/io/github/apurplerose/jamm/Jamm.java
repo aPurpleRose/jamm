@@ -13,12 +13,14 @@ import net.fabricmc.api.ModInitializer;
 import io.github.apurplerose.jamm.block.JammBlocks;
 import io.github.apurplerose.jamm.blockentity.JammBlockEntities;
 import io.github.apurplerose.jamm.gui.handler.JammHandlers;
+import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Jamm implements ModInitializer {
 
         public static final String MOD_ID = "jamm";
+        public static final Identifier PacketID = new Identifier(MOD_ID, "spawn_packet");
 
         public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
