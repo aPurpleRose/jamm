@@ -36,11 +36,13 @@ public class RepulsionWand extends WandItem
         public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand)
         {
                 ItemStack stack = user.getStackInHand(hand);
+                boolean used = false;
 
                 List<Entity> entities = world.getOtherEntities(user, Box.of(user.getPos(), 10, 10, 10));
                 for (Entity entity:entities) {
                         if (getMagic(stack) == 0) break;
                         if (!(entity instanceof LivingEntity livingEntity)) continue;
+                        used = true;
 
                         Vec3d userPos = user.getPos();
                         Vec3d pos = livingEntity.getPos();
@@ -66,6 +68,7 @@ public class RepulsionWand extends WandItem
                         //livingEntity.setVelocity(v.getX(), 3, v.getZ());
                 }
 
-                return TypedActionResult.success(stack);
+                if (used) return TypedActionResult.success(stack);
+                return TypedActionResult.pass(stack);
         }
 }

@@ -123,6 +123,12 @@ public class JammItems
         public static final Item FIREBALL_WAND = new FireballWand();
         public static final Item SUMMONERS_WAND = new SummonersWand();
 
+        //<editor-fold desc="bullet wands">
+        public static final Item BULLET_WAND_BREAK = new BulletWandItem(1);
+        public static final Item BULLET_WAND_LIGHTNING = new BulletWandItem(3);
+        public static final Item BULLET_WAND_NECROMANCY = new BulletWandItem(4);
+        //</editor-fold>
+
         //<editor-fold desc="custom effect wands">
         public static final Item WAND_LAUNCH_WEAK = new LaunchWand();
         public static final Item WAND_LAUNCH_STRONG = new LaunchWand(100, true);
@@ -138,7 +144,7 @@ public class JammItems
         public static final Item STARDUST_BUCKET = new BucketItem(JammFluids.STARDUST_STILL, new FabricItemSettings().group(JammItemGroup.JAMM).maxCount(1));
 
 
-        public static final Item MAGIC_BULLET = new MagicBulletItem(defaults().maxCount(16));
+        //public static final Item MAGIC_BULLET = new MagicBulletItem(defaults().maxCount(16));
 
         //</editor-fold>
 
@@ -201,9 +207,12 @@ public class JammItems
                 register("wand_levitation_weak", WAND_LEVITATION_WEAK);
                 register("wand_levitation_strong", WAND_LEVITATION_STRONG);
 
-                //register("amethyst_wand_freeze", AMETHYST_WAND_FREEZE);
                 register("break_wand", BREAK_WAND);
                 register("fireball_wand", FIREBALL_WAND);
+
+                register("bullet_wand_break", BULLET_WAND_BREAK);
+                register("bullet_wand_lightning", BULLET_WAND_LIGHTNING);
+                register("bullet_wand_necromancy", BULLET_WAND_NECROMANCY);
 
                 register("wand_launch_weak", WAND_LAUNCH_WEAK);
                 register("wand_repulsion_weak", WAND_REPULSION_WEAK);
@@ -222,7 +231,7 @@ public class JammItems
                 // tests
                 register("dowsing_rod", DOWSING_ROD);
                 register("summoners_wand", SUMMONERS_WAND);
-                register("magic_bullet", MAGIC_BULLET);
+                //register("magic_bullet", MAGIC_BULLET);
         }
 
         public static Item.Settings defaults()
