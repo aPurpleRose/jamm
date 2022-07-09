@@ -9,7 +9,6 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -38,9 +37,9 @@ public class SaturationAmethystChestplate extends AbstractArmorItem {
         }
 
         public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-                tooltip.add(new TranslatableText("tooltip_1.item.jamm.amethyst_chestplate")
+                tooltip.add(Text.translatable("tooltip_1.item.jamm.amethyst_chestplate")
                         .formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
-                tooltip.add(new TranslatableText("tooltip_2.item.jamm.amethyst_chestplate", stack.getNbt().getInt("magic"), MAX_MAGIC).
+                tooltip.add(Text.translatable("tooltip_2.item.jamm.amethyst_chestplate", stack.getNbt().getInt("magic"), MAX_MAGIC).
                         formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
         }
 

@@ -4,8 +4,7 @@
     "package": "io.github.apurplerose.jamm.mixin",
     "compatibilityLevel": "JAVA_17",
     "mixins": [
-        "BrewingRecipeRegistryMixin",
-        "StructureFeatureAccessor"
+        "BrewingRecipeRegistryMixin"
     ],
     "client": [
         "JammMixin"

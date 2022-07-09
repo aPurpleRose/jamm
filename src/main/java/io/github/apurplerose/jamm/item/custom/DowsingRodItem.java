@@ -9,9 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -49,7 +47,7 @@ public class DowsingRodItem extends Item {
                                 }
                         }
                         if(!foundBlock){
-                                player.sendMessage(new LiteralText("Didn't find any magical valuables below!"), false);
+                                player.sendMessage(Text.literal("Didn't find any magical valuables below!"), false);
                         }
                 }
 
@@ -60,7 +58,7 @@ public class DowsingRodItem extends Item {
 
         @Override
         public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-                tooltip.add(new TranslatableText("tooltip.item.jamm.dowsing_rod"));
+                tooltip.add(Text.translatable("tooltip.item.jamm.dowsing_rod"));
         }
 
         private boolean isValuableBlock(Block block){
@@ -68,7 +66,7 @@ public class DowsingRodItem extends Item {
         }
 
         private void outputValuableFound(Block blockFound, PlayerEntity player){
-                player.sendMessage(new LiteralText("Found " + blockFound.asItem().getName().getString()), false);
+                player.sendMessage(Text.literal("Found " + blockFound.asItem().getName().getString()), false);
         }
 
 }

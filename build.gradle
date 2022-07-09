@@ -32,10 +32,10 @@ dependencies {
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
 
-	modImplementation include("io.github.cottonmc:LibGui:5.4.2+1.18.2")
+	modImplementation include("io.github.cottonmc:LibGui:6.0.0+1.19")
 
 	// https://maven.blamejared.com/vazkii/patchouli/Patchouli/
-	modImplementation "vazkii.patchouli:Patchouli:1.18.2-69-FABRIC"
+	modImplementation "vazkii.patchouli:Patchouli:1.19-73-FABRIC"
 }
 
 processResources {

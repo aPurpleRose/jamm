@@ -9,7 +9,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
@@ -52,7 +52,7 @@ public class AstralAltarBlock extends BlockWithEntity {
                         Optional<AstralAltarRecipe> match = world.getRecipeManager().getFirstMatch(AstralAltarRecipe.Type.INSTANCE, inventory, world);
 
                         if (match.isPresent()) {
-                                player.sendMessage(new LiteralText("match!"), false);
+                                player.sendMessage(Text.literal("match!"), false);
 
                                 for (int i = 0; i < 7; i++) {
                                         inventory.getStack(i).decrement(1);
@@ -60,7 +60,7 @@ public class AstralAltarBlock extends BlockWithEntity {
 
                                 player.getInventory().offerOrDrop(match.get().getOutput().copy());
                         } else {
-                                player.sendMessage(new LiteralText("No match!"), false);
+                                player.sendMessage(Text.literal("No match!"), false);
                         }
 
                 } else {

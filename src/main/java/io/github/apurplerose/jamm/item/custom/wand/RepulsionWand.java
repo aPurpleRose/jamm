@@ -5,7 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Box;
@@ -48,7 +48,7 @@ public class RepulsionWand extends WandItem
                         Vec3d pos = livingEntity.getPos();
 
                         Vec3d diff = pos.subtract(userPos);
-                        user.sendMessage(new LiteralText(diff + ""), false);
+                        user.sendMessage(Text.literal(diff + ""), false);
                         double distance = diff.length();
 
                         Vec3d norm;
@@ -61,7 +61,7 @@ public class RepulsionWand extends WandItem
                                 norm = diff.normalize();
                         }
 
-                        user.sendMessage(new LiteralText(norm + ""), false);
+                        user.sendMessage(Text.literal(norm + ""), false);
 
                         livingEntity.setVelocity(norm.multiply((8.7-distance)*0.6));
 

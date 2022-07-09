@@ -8,11 +8,13 @@ import io.github.apurplerose.jamm.util.JammRenderHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
+import net.fabricmc.fabric.impl.registry.sync.packet.RegistryPacketHandler;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -45,10 +47,12 @@ public class JammClient implements ClientModInitializer {
                 EntityRendererRegistry.register(JammEntities.MagicBulletEntityType, (context) ->
                         new FlyingItemEntityRenderer(context));
                 receiveEntityPacket();
+
         }
 
 
-        public void receiveEntityPacket() {
+        public void receiveEntityPacket()
+        {
                 ClientSidePacketRegistry.INSTANCE.register(PacketID, (ctx, byteBuf) -> {
                         EntityType<?> et = Registry.ENTITY_TYPE.get(byteBuf.readVarInt());
                         UUID uuid = byteBuf.readUuid();

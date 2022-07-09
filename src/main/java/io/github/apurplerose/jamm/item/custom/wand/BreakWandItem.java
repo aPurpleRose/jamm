@@ -10,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
@@ -75,7 +74,7 @@ public class BreakWandItem extends WandItem {
                         magic = nbtData.getInt("magic");
                 }
 
-                tooltip.add(new TranslatableText("tooltip.item.jamm.wand", magic, MAX_MAGIC).formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
+                tooltip.add(Text.translatable("tooltip.item.jamm.wand", magic, MAX_MAGIC).formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
         }
 
 }

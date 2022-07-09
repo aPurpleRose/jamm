@@ -5,7 +5,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +35,7 @@ public class SlowFallingWand extends WandItem
 
                 if (entity instanceof PlayerEntity playerEntity) {
                         BlockPos pos = playerEntity.getLandingPos();
-                        playerEntity.sendMessage(new LiteralText(pos.getY() + " : " + entity.getPos().getY()), false);
+                        playerEntity.sendMessage(Text.literal(pos.getY() + " : " + entity.getPos().getY()), false);
                 }
         }
 }

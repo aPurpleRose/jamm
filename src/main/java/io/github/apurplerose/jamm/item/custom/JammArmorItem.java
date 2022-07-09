@@ -12,9 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -47,8 +45,8 @@ public class JammArmorItem extends ArmorItem {
 
         @Override
         public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-                tooltip.add(new TranslatableText("item.jamm.amethyst_chestplate.tooltip_1").formatted(Formatting.ITALIC));
-                tooltip.add(new TranslatableText("item.jamm.amethyst_chestplate.tooltip_2", magic, MAX_MAGIC).formatted(Formatting.ITALIC));
+                tooltip.add(Text.translatable("item.jamm.amethyst_chestplate.tooltip_1").formatted(Formatting.ITALIC));
+                tooltip.add(Text.translatable("item.jamm.amethyst_chestplate.tooltip_2", magic, MAX_MAGIC).formatted(Formatting.ITALIC));
         }
 
         @Override
