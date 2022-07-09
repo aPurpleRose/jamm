@@ -53,7 +53,32 @@ public class JammClient implements ClientModInitializer {
 
         public void receiveEntityPacket()
         {
-                ClientSidePacketRegistry.INSTANCE.register(PacketID, (ctx, byteBuf) -> {
+                ClientPlayNetworking.registerGlobalReceiver(PacketID, ((client, handler, buf, responseSender) -> {
+                        EntityType<?> et = Registry.ENTITY_TYPE.get(buf.readVarInt());
+                        UUID uuid = buf.readUuid();
+                        int entityId = buf.readVarInt();
+                        Vec3d pos = EntitySpawnPacket.PacketBufUtil.readVec3d(buf);
+                        float pitch = EntitySpawnPacket.PacketBufUtil.readAngle(buf);
+                        float yaw = EntitySpawnPacket.PacketBufUtil.readAngle(buf);
+
+                        client.getNetworkHandler().getTaskQueue().execute(() -> {
+                                if (MinecraftClient.getInstance().world == null)
+                                        throw new IllegalStateException("Tried to spawn entity in a null world!");
+                                Entity e = et.create(MinecraftClient.getInstance().world);
+                                if (e == null)
+                                        throw new IllegalStateException("Failed to create instance of entity \"" + Registry.ENTITY_TYPE.getId(et) + "\"!");
+                                e.updateTrackedPosition(pos.x, pos.y, pos.z);
+                                e.setPos(pos.x, pos.y, pos.z);
+                                e.setPitch(pitch);
+                                e.setYaw(yaw);
+                                e.setId(entityId);
+                                e.setUuid(uuid);
+                                MinecraftClient.getInstance().world.addEntity(entityId, e);
+                        });
+                }));
+
+
+                /*ClientSidePacketRegistry.INSTANCE.register(PacketID, (ctx, byteBuf) -> {
                         EntityType<?> et = Registry.ENTITY_TYPE.get(byteBuf.readVarInt());
                         UUID uuid = byteBuf.readUuid();
                         int entityId = byteBuf.readVarInt();
@@ -74,6 +99,6 @@ public class JammClient implements ClientModInitializer {
                                 e.setUuid(uuid);
                                 MinecraftClient.getInstance().world.addEntity(entityId, e);
                         });
-                });
+                });*/
         }
 }
