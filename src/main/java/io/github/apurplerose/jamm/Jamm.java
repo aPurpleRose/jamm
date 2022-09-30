@@ -1,8 +1,11 @@
 package io.github.apurplerose.jamm;
 
+import io.github.apurplerose.jamm.block.JammBlocks;
+import io.github.apurplerose.jamm.blockentity.JammBlockEntities;
 import io.github.apurplerose.jamm.effect.JammEffects;
 import io.github.apurplerose.jamm.enchantments.JammEnchantments;
 import io.github.apurplerose.jamm.event.JammEvents;
+import io.github.apurplerose.jamm.gui.handler.JammHandlers;
 import io.github.apurplerose.jamm.item.JammItems;
 import io.github.apurplerose.jamm.potion.JammPotions;
 import io.github.apurplerose.jamm.recipe.JammRecipes;
@@ -10,9 +13,6 @@ import io.github.apurplerose.jamm.registries.JammRegistries;
 import io.github.apurplerose.jamm.stat.JammStats;
 import io.github.apurplerose.jamm.world.gen.JammWorldGen;
 import net.fabricmc.api.ModInitializer;
-import io.github.apurplerose.jamm.block.JammBlocks;
-import io.github.apurplerose.jamm.blockentity.JammBlockEntities;
-import io.github.apurplerose.jamm.gui.handler.JammHandlers;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

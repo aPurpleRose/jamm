@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "jamm:block/stripped_mystical_log_top",
-    "side": "jamm:block/stripped_mystical_log"
-  }
+    "parent": "minecraft:block/cube_column_horizontal",
+    "textures": {
+        "end": "jamm:block/stripped_mystical_log_top",
+        "side": "jamm:block/stripped_mystical_log"
+    }
 }

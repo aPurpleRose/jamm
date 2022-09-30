@@ -1,11 +1,5 @@
 package io.github.apurplerose.jamm.world.structures;
 
-import io.github.apurplerose.jamm.Jamm;
-import net.minecraft.structure.PlainsVillageData;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-
 /*public class JammConfiguredStructures {
 
         public static final ConfiguredStructureFeature<?, ?> CONFIGURED_RUN_DOWN_HOUSE = JammStructures.RUN_DOWN_HOUSE

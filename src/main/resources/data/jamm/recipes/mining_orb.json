@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SDS",
+        " A ",
+        "PRP"
+    ],
+    "key": {
+        "A": {
+            "item": "jamm:orb"
+        },
+        "D": {
+            "item": "jamm:dark_amethyst"
+        },
+        "P": {
+            "item": "minecraft:golden_carrot"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "S": {
+            "item": "minecraft:sugar"
+        }
+    },
+    "result": {
+        "item": "jamm:mining_orb"
+    }
+}

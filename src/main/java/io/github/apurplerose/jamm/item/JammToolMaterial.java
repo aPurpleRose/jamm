@@ -1,12 +1,8 @@
 package io.github.apurplerose.jamm.item;
 
 import net.fabricmc.yarn.constants.MiningLevels;
-import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.util.Lazy;
-
-import java.util.function.Supplier;
 
 public enum JammToolMaterial implements ToolMaterial {
         /*WOOD(MiningLevels.WOOD, 59, 2.0F, 0.0F, 15, () -> {

@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "jamm:item/wand/wand_healing_weak"
-  }
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "jamm:item/wand/wand_healing_weak"
+    }
 }

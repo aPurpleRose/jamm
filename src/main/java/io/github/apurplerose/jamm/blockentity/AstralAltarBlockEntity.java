@@ -1,6 +1,7 @@
 package io.github.apurplerose.jamm.blockentity;
 
 import io.github.apurplerose.jamm.gui.AstralAltarGuiDescription;
+import io.github.apurplerose.jamm.util.AstralAltarInventory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,7 +15,6 @@ import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import io.github.apurplerose.jamm.util.AstralAltarInventory;
 
 
 public class AstralAltarBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, AstralAltarInventory {

@@ -10,6 +10,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.SkeletonHorseEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,7 +28,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.List;
-import java.util.Random;
 
 public class MagicBulletEntity extends ThrownItemEntity
 {
@@ -56,7 +56,7 @@ public class MagicBulletEntity extends ThrownItemEntity
         @Environment(EnvType.CLIENT)
         private ParticleEffect getParticleParameters() {
                 ItemStack itemStack = this.getItem();
-                return (ParticleEffect)(itemStack.isEmpty() ? ParticleTypes.PORTAL : new ItemStackParticleEffect(ParticleTypes.ITEM, itemStack));
+                return itemStack.isEmpty() ? ParticleTypes.PORTAL : new ItemStackParticleEffect(ParticleTypes.ITEM, itemStack);
         }
 
         @Environment(EnvType.CLIENT)
@@ -94,6 +94,9 @@ public class MagicBulletEntity extends ThrownItemEntity
                                 world.breakBlock(pos, true);
                         default:
                 }
+
+                this.world.sendEntityStatus(this, (byte)3);
+                this.kill();
         }
 
         protected void onCollision(HitResult hitResult) {
@@ -103,8 +106,43 @@ public class MagicBulletEntity extends ThrownItemEntity
                 Vec3d pos =  hitResult.getPos();
                 switch (kind) {
                         case 2: // launch
+                                int launchVelocity = dark ? 3 : 2;
+
+                                List<Entity> entities1 = world.getOtherEntities(this, Box.of(pos, 10, 10, 10));
+                                for (Entity entity:entities1) {
+                                        if (!(entity instanceof LivingEntity livingEntity)) continue;
+
+                                        Vec3d v = entity.getVelocity();
+                                        livingEntity.setVelocity(v.getX(), launchVelocity, v.getZ());
+                                }
+
+                                break;
+                        case 3: // lightning
+                                LightningEntity lightning_bolt = EntityType.LIGHTNING_BOLT.create(world);
+                                lightning_bolt.setPos(pos.getX(), pos.getY(), pos.getZ());
+                                world.spawnEntity(lightning_bolt);
+                                break;
+                        case 4: // spawn entities/necromancy?
+                                // skeleton, skeleton horseman, stray, wither skeleton
+                                if (random.nextInt(7) == 0) {
+                                        SkeletonHorseEntity entity = EntityType.SKELETON_HORSE.create(world);
+                                        entity.setTrapped(true);
+                                        entity.setPos(pos.getX(), pos.getY(), pos.getZ());
+                                        world.spawnEntity(entity);
+                                } else {
+                                        LivingEntity entity = switch (random.nextInt(4)) {
+                                                case 1 -> EntityType.STRAY.create(world);
+                                                case 2 -> EntityType.WITHER_SKELETON.create(world);
+                                                case 3 -> EntityType.SKELETON_HORSE.create(world);
+                                                default -> EntityType.SKELETON.create(world);
+                                        };
+                                        entity.setPos(pos.getX(), pos.getY(), pos.getZ());
+                                        world.spawnEntity(entity);
+                                }
+                                break;
+                        case 5: //repulsion
                                 List<Entity> entities = world.getOtherEntities(this, Box.of(pos, 10, 10, 10));
-                                for (Entity entity:entities) {
+                                for (Entity entity : entities) {
                                         if (!(entity instanceof LivingEntity livingEntity)) continue;
 
                                         Vec3d ePos = livingEntity.getPos();
@@ -124,23 +162,6 @@ public class MagicBulletEntity extends ThrownItemEntity
                                         livingEntity.setVelocity(norm.multiply((8.7 - distance) * 0.6));
                                 }
                                 break;
-                        case 3: // lightning
-                                LightningEntity lightning_bolt = EntityType.LIGHTNING_BOLT.create(world);
-                                lightning_bolt.setPos(pos.getX(), pos.getY(), pos.getZ());
-                                world.spawnEntity(lightning_bolt);
-                                break;
-                        case 4: // spawn entities/necromancy?
-                                // skeleton, skeleton horseman, stray, wither skeleton
-                                LivingEntity entity;
-                                Random random = new Random();
-                                entity = switch (random.nextInt(3)) {
-                                        case 1 -> EntityType.STRAY.create(world);
-                                        case 2 -> EntityType.WITHER_SKELETON.create(world);
-                                        default -> EntityType.SKELETON.create(world);
-                                };
-                                entity.setPos(pos.getX(), pos.getY(), pos.getZ());
-                                world.spawnEntity(entity);
-                                break;
                         default:
                 }
 
@@ -155,6 +176,6 @@ public class MagicBulletEntity extends ThrownItemEntity
 
         @Override
         public Packet createSpawnPacket() {
-                return EntitySpawnPacket.create(this, JammClient.PacketID);
+                return EntitySpawnPacket.create(this, JammClient.SPAWN_PACKET);
         }
 }

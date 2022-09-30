@@ -2,6 +2,7 @@ package io.github.apurplerose.jamm.block;
 
 import io.github.apurplerose.jamm.Jamm;
 import io.github.apurplerose.jamm.fluid.JammFluids;
+import io.github.apurplerose.jamm.item.JammItemGroup;
 import io.github.apurplerose.jamm.item.JammItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -10,7 +11,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
-import io.github.apurplerose.jamm.item.JammItemGroup;
 
 public class JammBlocks {
 
@@ -53,11 +53,11 @@ public class JammBlocks {
                 return Registry.register(Registry.BLOCK, new Identifier(Jamm.MOD_ID, name), block);
         }
 
-        private static Block registerWithoutItem(String name, Block block){
+        private static Block registerWithoutItem(String name, Block block) {
                 return Registry.register(Registry.BLOCK, new Identifier(Jamm.MOD_ID, name), block);
         }
 
-        public static void registerBlocks(){
+        public static void registerBlocks() {
                 System.out.println("Registering Mod Blocks for " + Jamm.MOD_ID);
 
                 //<editor-fold desc="ores">

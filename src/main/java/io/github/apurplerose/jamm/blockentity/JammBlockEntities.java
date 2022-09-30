@@ -1,12 +1,12 @@
 package io.github.apurplerose.jamm.blockentity;
 
 import io.github.apurplerose.jamm.Jamm;
+import io.github.apurplerose.jamm.block.JammBlocks;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import io.github.apurplerose.jamm.block.JammBlocks;
 
 public class JammBlockEntities {
 

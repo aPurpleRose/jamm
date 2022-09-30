@@ -1,12 +1,15 @@
 package io.github.apurplerose.jamm.item;
 
 import io.github.apurplerose.jamm.Jamm;
-import io.github.apurplerose.jamm.effect.JammEffects;
 import io.github.apurplerose.jamm.fluid.JammFluids;
-import io.github.apurplerose.jamm.item.custom.*;
+import io.github.apurplerose.jamm.item.custom.DarkAmethystItem;
+import io.github.apurplerose.jamm.item.custom.DowsingRodItem;
+import io.github.apurplerose.jamm.item.custom.TutorialBookItem;
 import io.github.apurplerose.jamm.item.custom.armor.AmethystChestplateArmorItem;
 import io.github.apurplerose.jamm.item.custom.armor.SaturationAmethystChestplate;
-import io.github.apurplerose.jamm.item.custom.tool.*;
+import io.github.apurplerose.jamm.item.custom.tool.ModAxeItem;
+import io.github.apurplerose.jamm.item.custom.tool.ModHoeItem;
+import io.github.apurplerose.jamm.item.custom.tool.ModPickaxeItem;
 import io.github.apurplerose.jamm.item.custom.wand.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
@@ -42,8 +45,13 @@ public class JammItems
 
         //<editor-fold desc="orbs">
         public static final Item ORB = new Item(defaults());
-        public static final Item ORB_AGILITY = new Item(defaults());
-        public static final Item ORB_HEALING = new Item(defaults());
+        public static final Item AGILITY_ORB = new Item(defaults());
+        public static final Item COMBAT_ORB = new Item(defaults());
+        public static final Item CONDUIT_POWER_ORB = new Item(defaults());
+        public static final Item HEALING_ORB = new Item(defaults());
+        public static final Item MINING_ORB = new Item(defaults());
+        public static final Item SATURATION_ORB = new Item(defaults());
+        public static final Item TANK_ORB = new Item(defaults());
         //</editor-fold>
 
         //<editor-fold desc="armor">
@@ -53,18 +61,24 @@ public class JammItems
         public static final Item AMETHYST_BOOTS = new ArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.FEET, defaults());
 
         // material has to be different, armors with the same material get the same effect because of the material to effect map, maybe this is fixable
-        public static final Item AMETHYST_CHESTPLATE_AGILITY = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST, EquipmentSlot.CHEST, defaults(),
+        public static final Item AMETHYST_CHESTPLATE_AGILITY = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_AGILITY, EquipmentSlot.CHEST, defaults(),
                 new StatusEffectInstance(StatusEffects.JUMP_BOOST, 20, 2, false, false),
                 new StatusEffectInstance(StatusEffects.SPEED, 20, 2, false, false));
-        public static final Item AMETHYST_CHESTPLATE_TANK = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_TANK, EquipmentSlot.CHEST, defaults(),
-                new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 2, false, false));
-        public static final Item AMETHYST_CHESTPLATE_LEVITATION = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_LEVITATION, EquipmentSlot.CHEST, defaults(),
-                //new StatusEffectInstance(StatusEffects.LEVITATION, 20, 2, false, false),
-                new StatusEffectInstance(StatusEffects.SLOW_FALLING, 20, 2, false, false));
-                        // improvised so there is something, should enable flying like creative
-                        // OR: high jump when normally jumping and giving levitation when holding down space until it is stopped
-                        // btw I think the durations don't add up for the chestplate,
+        public static final Item AMETHYST_CHESTPLATE_COMBAT = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_COMBAT, EquipmentSlot.CHEST, defaults(),
+                new StatusEffectInstance(StatusEffects.HASTE, 20, 1, false, false),
+                new StatusEffectInstance(StatusEffects.STRENGTH, 20, 1, false, false));
+        public static final Item AMETHYST_CHESTPLATE_CONDUIT_POWER = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_CONDUIT_POWER, EquipmentSlot.CHEST, defaults(),
+                new StatusEffectInstance(StatusEffects.CONDUIT_POWER, 20, 0, false, false));
+        public static final Item AMETHYST_CHESTPLATE_HEALING = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_HEALING, EquipmentSlot.CHEST, defaults(),
+                new StatusEffectInstance(StatusEffects.REGENERATION, 20, 1, false, false));
+        public static final Item AMETHYST_CHESTPLATE_MINING = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_MINING, EquipmentSlot.CHEST, defaults(),
+                new StatusEffectInstance(StatusEffects.HASTE, 20, 2, false, false),
+                new StatusEffectInstance(StatusEffects.NIGHT_VISION, 20, 0, false, false));
         public static final Item AMETHYST_CHESTPLATE_SATURATION = new SaturationAmethystChestplate(JammArmorMaterial.AMETHYST_SATURATION, EquipmentSlot.CHEST, defaults());
+        public static final Item AMETHYST_CHESTPLATE_TANK = new AmethystChestplateArmorItem(JammArmorMaterial.AMETHYST_TANK, EquipmentSlot.CHEST, defaults(),
+                new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 2, false, false),
+                new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 20, 0, false, false));
+
 
         /* plan:
          * armor gives effects like high jump and speed and ..., maybe a custom paranoia effect when the armor gives too much strong effects
@@ -90,7 +104,7 @@ public class JammItems
         public static final Item AMETHYST_WAND = new WandItem();
         public static final Item DARK_AMETHYST_WAND = new WandItem();
 
-        //<editor-fold desc="effect wands">
+        //<editor-fold desc="normal wands">
         public static final Item WAND_AGILITY_WEAK = new EffectWandItem(
                 new StatusEffectInstance(StatusEffects.JUMP_BOOST, 200, 1, false, false),
                 new StatusEffectInstance(StatusEffects.SPEED, 200, 1, false, false));
@@ -105,10 +119,16 @@ public class JammItems
                 //new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 0, 1, false, false),
                 new StatusEffectInstance(StatusEffects.REGENERATION, 60, 1, false, false));
 
+        public static final Item WAND_LAUNCH_WEAK = new LaunchWand();
+        public static final Item WAND_LAUNCH_STRONG = new LaunchWand(100, true);
+
         public static final Item WAND_LEVITATION_WEAK = new EffectWandItem(
                 new StatusEffectInstance(StatusEffects.LEVITATION, 100, 0, false, false)); //1
         public static final Item WAND_LEVITATION_STRONG = new EffectWandItem(
                 new StatusEffectInstance(StatusEffects.LEVITATION, 100, 2, false, false)); //3
+
+        public static final Item WAND_REPULSION_WEAK = new RepulsionWand();
+        public static final Item WAND_REPULSION_STRONG = new RepulsionWand(100, true);
 
         public static final Item WAND_SLOW_FALLING_WEAK = new EffectWandItem(
                 new StatusEffectInstance(StatusEffects.SLOW_FALLING, 200, 0, false, false)
@@ -121,20 +141,17 @@ public class JammItems
         //<editor-fold desc="special wands">
         public static final Item BREAK_WAND = new BreakWandItem();
         public static final Item FIREBALL_WAND = new FireballWand();
-        public static final Item SUMMONERS_WAND = new SummonersWand();
 
         //<editor-fold desc="bullet wands">
         public static final Item BULLET_WAND_BREAK = new BulletWandItem(1);
+        public static final Item BULLET_WAND_LAUNCH_WEAK = new BulletWandItem(2);
+        public static final Item BULLET_WAND_LAUNCH_STRONG = new BulletWandItem(2, true);
         public static final Item BULLET_WAND_LIGHTNING = new BulletWandItem(3);
         public static final Item BULLET_WAND_NECROMANCY = new BulletWandItem(4);
+        public static final Item BULLET_WAND_REPULSION_WEAK = new BulletWandItem(5);
+        public static final Item BULLET_WAND_REPULSION_STRONG = new BulletWandItem(5, true);
         //</editor-fold>
 
-        //<editor-fold desc="custom effect wands">
-        public static final Item WAND_LAUNCH_WEAK = new LaunchWand();
-        public static final Item WAND_LAUNCH_STRONG = new LaunchWand(100, true);
-        public static final Item WAND_REPULSION_WEAK = new RepulsionWand();
-        public static final Item WAND_REPULSION_STRONG = new RepulsionWand(100, true);
-        //</editor-fold>
         //</editor-fold>
 
 
@@ -180,8 +197,13 @@ public class JammItems
 
                 //<editor-fold desc="orbs">
                 register("orb", ORB);
-                register("agility_orb", ORB_AGILITY);
-                register("heal_orb", ORB_HEALING);
+                register("agility_orb", AGILITY_ORB);
+                register("combat_orb", COMBAT_ORB);
+                register("conduit_power_orb", CONDUIT_POWER_ORB);
+                register("healing_orb", HEALING_ORB);
+                register("mining_orb", MINING_ORB);
+                register("saturation_orb", SATURATION_ORB);
+                register("tank_orb", TANK_ORB);
                 //</editor-fold>
 
                 //<editor-fold desc="armor">
@@ -193,34 +215,43 @@ public class JammItems
 
                 //<editor-fold desc="special chestplate">
                 register("amethyst_chestplate_agility", AMETHYST_CHESTPLATE_AGILITY);
-                register("amethyst_chestplate_tank", AMETHYST_CHESTPLATE_TANK);
-                register("amethyst_chestplate_levitation", AMETHYST_CHESTPLATE_LEVITATION);
+                register("amethyst_chestplate_combat", AMETHYST_CHESTPLATE_COMBAT);
+                register("amethyst_chestplate_conduit_power", AMETHYST_CHESTPLATE_CONDUIT_POWER);
+                register("amethyst_chestplate_healing", AMETHYST_CHESTPLATE_HEALING);
+                register("amethyst_chestplate_mining", AMETHYST_CHESTPLATE_MINING);
                 register("amethyst_chestplate_saturation", AMETHYST_CHESTPLATE_SATURATION);
+                register("amethyst_chestplate_tank", AMETHYST_CHESTPLATE_TANK);
+
                 //</editor-fold>
 
                 //<editor-fold desc="wands">
                 register("amethyst_wand", AMETHYST_WAND);
+                register("dark_amethyst_wand", DARK_AMETHYST_WAND);
+
                 register("wand_agility_weak", WAND_AGILITY_WEAK);
                 register("wand_agility_strong", WAND_AGILITY_STRONG);
                 register("wand_healing_weak", WAND_HEALING_WEAK);
                 register("wand_healing_strong", WAND_HEALING_STRONG);
+                register("wand_launch_weak", WAND_LAUNCH_WEAK);
+                register("wand_launch_strong", WAND_LAUNCH_STRONG);
                 register("wand_levitation_weak", WAND_LEVITATION_WEAK);
                 register("wand_levitation_strong", WAND_LEVITATION_STRONG);
+                register("wand_repulsion_weak", WAND_REPULSION_WEAK);
+                register("wand_repulsion_strong", WAND_REPULSION_STRONG);
+                register("wand_slow_falling_weak", WAND_SLOW_FALLING_WEAK);
 
                 register("break_wand", BREAK_WAND);
                 register("fireball_wand", FIREBALL_WAND);
 
                 register("bullet_wand_break", BULLET_WAND_BREAK);
+                register("bullet_wand_launch_weak", BULLET_WAND_LAUNCH_WEAK);
+                register("bullet_wand_launch_strong", BULLET_WAND_LAUNCH_STRONG);
                 register("bullet_wand_lightning", BULLET_WAND_LIGHTNING);
                 register("bullet_wand_necromancy", BULLET_WAND_NECROMANCY);
+                register("bullet_wand_repulsion_weak", BULLET_WAND_REPULSION_WEAK);
+                register("bullet_wand_repulsion_strong", BULLET_WAND_REPULSION_STRONG);
 
-                register("wand_launch_weak", WAND_LAUNCH_WEAK);
-                register("wand_repulsion_weak", WAND_REPULSION_WEAK);
-                register("wand_slow_falling_weak", WAND_SLOW_FALLING_WEAK);
 
-                register("dark_amethyst_wand", DARK_AMETHYST_WAND);
-                register("wand_launch_strong", WAND_LAUNCH_STRONG);
-                register("wand_repulsion_strong", WAND_REPULSION_STRONG);
                 //</editor-fold>
 
                 //<editor-fold desc="misc">
@@ -230,7 +261,6 @@ public class JammItems
 
                 // tests
                 register("dowsing_rod", DOWSING_ROD);
-                register("summoners_wand", SUMMONERS_WAND);
                 //register("magic_bullet", MAGIC_BULLET);
         }
 

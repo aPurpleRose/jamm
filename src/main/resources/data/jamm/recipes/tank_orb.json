@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TDT",
+        " A ",
+        "MRM"
+    ],
+    "key": {
+        "A": {
+            "item": "jamm:orb"
+        },
+        "D": {
+            "item": "jamm:dark_amethyst"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "M": {
+            "item": "minecraft:magma_cream"
+        },
+        "T": {
+            "item": "minecraft:turtle_helmet"
+        }
+    },
+    "result": {
+        "item": "jamm:tank_orb"
+    }
+}

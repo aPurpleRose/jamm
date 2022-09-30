@@ -10,12 +10,12 @@ import net.minecraft.util.Identifier;
 
 public class JammHandlers {
 
-    public static ScreenHandlerType<AstralAltarGuiDescription> ASTRAL_ALTAR;
+        public static ScreenHandlerType<AstralAltarGuiDescription> ASTRAL_ALTAR;
 
-    public static void registerHandlers(){
-        ASTRAL_ALTAR = ScreenHandlerRegistry.registerSimple(new Identifier(Jamm.MOD_ID, "astral_altar_screen"), (syncId, inventory)
-                -> new AstralAltarGuiDescription(syncId, inventory, ScreenHandlerContext.EMPTY));
-    }
+        public static void registerHandlers() {
+                ASTRAL_ALTAR = ScreenHandlerRegistry.registerSimple(new Identifier(Jamm.MOD_ID, "astral_altar_screen"), (syncId, inventory)
+                        -> new AstralAltarGuiDescription(syncId, inventory, ScreenHandlerContext.EMPTY));
+        }
 
 
 }

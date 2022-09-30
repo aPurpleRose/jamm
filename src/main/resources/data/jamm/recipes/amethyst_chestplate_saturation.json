@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:amethyst_chestplate"
+        },
+        {
+            "item": "minecraft:saturation_orb"
+        }
+    ],
+    "result": {
+        "item": "minecraft:amethyst_chestplate_saturation"
+    }
+}

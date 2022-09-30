@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.12-SNAPSHOT'
+	id 'fabric-loom' version '1.0-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -31,11 +31,10 @@ dependencies {
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
-
 	modImplementation include("io.github.cottonmc:LibGui:6.0.0+1.19")
 
 	// https://maven.blamejared.com/vazkii/patchouli/Patchouli/
-	modImplementation "vazkii.patchouli:Patchouli:1.19-73-FABRIC"
+	modImplementation "vazkii.patchouli:Patchouli:1.19-75-FABRIC"
 }
 
 processResources {

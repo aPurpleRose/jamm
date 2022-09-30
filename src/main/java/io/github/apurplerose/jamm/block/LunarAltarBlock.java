@@ -10,6 +10,7 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -36,6 +37,14 @@ public class LunarAltarBlock extends AbstractAltarBlock {
         @Override
         public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
         {
+                if (world.isClient && hand == Hand.MAIN_HAND) {
+                        if (!player.getStackInHand(hand).isEmpty() || !state.hasBlockEntity()) return super.onUse(state, world, pos, player, hand, hit);
+
+
+                        LunarAltarBlockEntity lae = (LunarAltarBlockEntity) world.getBlockEntity(pos);
+                        player.sendMessage(Text.translatable("info.jamm.lunar_altar", lae.getMagic(), LunarAltarBlockEntity.MAX_MAGIC), true);
+                }
+
                 if (!world.isClient() && hand == Hand.MAIN_HAND) {
                         LunarAltarBlockEntity lae;
                         if (state.hasBlockEntity()) {

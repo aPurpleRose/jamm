@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "MDM",
+        " A ",
+        "TRT"
+    ],
+    "key": {
+        "A": {
+            "item": "jamm:orb"
+        },
+        "D": {
+            "item": "jamm:dark_amethyst"
+        },
+        "M": {
+            "item": "minecraft:glistering_melon_slice"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "T": {
+            "item": "minecraft:ghast_tear"
+        }
+    },
+    "result": {
+        "item": "jamm:healing_orb"
+    }
+}

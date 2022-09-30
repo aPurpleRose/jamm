@@ -1,14 +1,14 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "type": "minecraft:item",
-          "name": "jamm:lunar_altar"
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "jamm:lunar_altar"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

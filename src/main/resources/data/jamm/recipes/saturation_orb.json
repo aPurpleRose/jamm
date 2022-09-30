@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PDM",
+        " A ",
+        "BRS"
+    ],
+    "key": {
+        "A": {
+            "item": "jamm:orb"
+        },
+        "D": {
+            "item": "jamm:dark_amethyst"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "M": {
+            "item": "minecraft:cooked_mutton"
+        },
+        "S": {
+            "item": "minecraft:cooked_salmon"
+        },
+        "B": {
+            "item": "minecraft:cooked_beef"
+        },
+        "P": {
+            "item": "minecraft:cooked_porkchop"
+        }
+    },
+    "result": {
+        "item": "jamm:saturation_orb"
+    }
+}

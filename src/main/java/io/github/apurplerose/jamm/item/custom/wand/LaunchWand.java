@@ -39,10 +39,10 @@ public class LaunchWand extends WandItem
                         return TypedActionResult.success(stack);
                 }
 
-                int magic = -1;
+                int magic = getMagic(stack) - 1;
                 List<Entity> entities = world.getOtherEntities(user, Box.of(user.getPos(), 10, 10, 10));
                 for (Entity entity:entities) {
-                        if (getMagic(stack) == 0) break;
+                        if (magic <= 0) break;
                         if (!(entity instanceof LivingEntity livingEntity)) continue;
 
                         magic--;

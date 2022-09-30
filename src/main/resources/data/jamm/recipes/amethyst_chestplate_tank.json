@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:amethyst_chestplate"
+        },
+        {
+            "item": "minecraft:tank_orb"
+        }
+    ],
+    "result": {
+        "item": "minecraft:amethyst_chestplate_tank"
+    }
+}

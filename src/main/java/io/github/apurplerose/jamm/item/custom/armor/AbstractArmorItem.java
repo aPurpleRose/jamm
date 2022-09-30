@@ -1,7 +1,6 @@
 package io.github.apurplerose.jamm.item.custom.armor;
 
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
@@ -16,7 +15,6 @@ public abstract class AbstractArmorItem extends ArmorItem {
 
         public abstract int missingMagic(ItemStack item);
         public abstract void addMagic(ItemStack item, int magic);
-
 
         protected abstract void evaluateArmorEffects(PlayerEntity player);
 

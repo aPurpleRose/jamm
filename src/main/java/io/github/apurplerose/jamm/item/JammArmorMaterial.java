@@ -2,7 +2,6 @@ package io.github.apurplerose.jamm.item;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -27,7 +26,13 @@ public enum JammArmorMaterial implements ArmorMaterial {
 
         AMETHYST_AGILITY("amethyst_agility",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
                 1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST)),
-        AMETHYST_LEVITATION("amethyst_levitation",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+        AMETHYST_COMBAT("amethyst_combat",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+                1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST)),
+        AMETHYST_CONDUIT_POWER("amethyst_conduit_power",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+                1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST)),
+        AMETHYST_HEALING("amethyst_healing",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+                1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST)),
+        AMETHYST_MINING("amethyst_mining",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
                 1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST)),
         AMETHYST_SATURATION("amethyst_saturation",27, new int[]{2,5,7,2}, 27, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
                 1.0f, 0.0f, () -> Ingredient.ofItems(JammItems.AMETHYST)),

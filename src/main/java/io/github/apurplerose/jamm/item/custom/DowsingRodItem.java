@@ -1,7 +1,7 @@
 package io.github.apurplerose.jamm.item.custom;
 
 import io.github.apurplerose.jamm.item.JammItemGroup;
-import io.github.apurplerose.jamm.item.JammItems;
+import io.github.apurplerose.jamm.util.JammTags;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
@@ -13,7 +13,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import io.github.apurplerose.jamm.util.JammTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

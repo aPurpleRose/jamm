@@ -1,6 +1,5 @@
 package io.github.apurplerose.jamm.recipe;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 class AstralAltarRecipeJsonFormat {

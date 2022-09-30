@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "NDN",
+        " A ",
+        "CRC"
+    ],
+    "key": {
+        "A": {
+            "item": "jamm:orb"
+        },
+        "C": {
+            "item": "minecraft:conduit"
+        },
+        "D": {
+            "item": "jamm:dark_amethyst"
+        },
+        "N": {
+            "item": "minecraft:nautilus_shell"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "jamm:agility_orb"
+    }
+}

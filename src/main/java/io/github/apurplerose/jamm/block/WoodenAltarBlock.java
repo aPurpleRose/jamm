@@ -37,7 +37,7 @@ public class WoodenAltarBlock extends BlockWithEntity {
                                 player.sendMessage(Text.literal(player.getActiveItem().toString()), false);
                         }
                         //player.sendMessage(new LiteralText(player.getItemsHand().toString()),false);
-                        if (player.getItemsHand() == JammItems.AMETHYST_WAND) {
+                        if (player.getHandItems() == JammItems.AMETHYST_WAND) {
                                 player.sendMessage(Text.literal("hi"),false);
                         }
                 }

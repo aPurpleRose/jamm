@@ -1,24 +1,5 @@
 package io.github.apurplerose.jamm.item.custom.armor;
 
-import com.google.common.collect.ImmutableMap;
-import io.github.apurplerose.jamm.item.JammArmorMaterial;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
-import java.util.Map;
-
 /*public class DarkAmethystChestplateArmorItem extends AbstractArmorItem {
 
         private ImmutableMap<ArmorMaterial, StatusEffect[]> MATERIAL_TO_EFFECT_MAP;

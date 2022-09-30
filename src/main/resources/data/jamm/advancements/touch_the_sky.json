@@ -1,4 +1,5 @@
 {
+    "parent": "jamm:root",
     "display": {
         "icon": {
             "item": "jamm:amethyst"
@@ -16,11 +17,19 @@
         "touch_the_sky": {
             "trigger": "minecraft:location",
             "conditions": {
-                "location": {
-                    "position": {
-                        "y": 196
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "location": {
+                                "position": {
+                                    "y": 196
+                                }
+                            }
+                        }
                     }
-                }
+                ]
             }
         }
     },

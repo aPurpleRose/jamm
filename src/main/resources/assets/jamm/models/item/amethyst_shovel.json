@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "jamm:item/amethyst_shovel"
-  }
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "jamm:item/tool/amethyst_shovel"
+    }
 }

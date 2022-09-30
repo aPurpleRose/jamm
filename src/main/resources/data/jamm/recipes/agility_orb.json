@@ -1,25 +1,28 @@
 {
-    "type": "jamm:astral_altar_recipe",
-    "center" : {
-        "item": "jamm:orb"
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SDS",
+        " A ",
+        "PRP"
+    ],
+    "key": {
+        "A": {
+            "item": "jamm:orb"
+        },
+        "D": {
+            "item": "jamm:dark_amethyst"
+        },
+        "P": {
+            "item": "minecraft:rabbit_paw"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "S": {
+            "item": "minecraft:sugar"
+        }
     },
-    "offering1": {
-        "tag": "jamm:dark_amethyst"
-    },
-    "offering2": {
-        "tag": "minecraft:sugar"
-    },
-    "offering3": {
-        "tag": "minecraft:rabbit_paw"
-    },
-    "offering4": {
-        "tag": "minecraft:redstone"
-    },
-    "offering5": {
-        "tag": "minecraft:rabbit_paw"
-    },
-    "offering6": {
-        "tag": "minecraft:sugar"
-    },
-    "result": "jamm:agility_orb"
+    "result": {
+        "item": "jamm:agility_orb"
+    }
 }

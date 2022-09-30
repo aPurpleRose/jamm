@@ -13,6 +13,8 @@ import net.minecraft.util.registry.Registry;
 
 public class JammPotions {
 
+        //remove later
+        public static final Potion DIVINE_RETRIBUTION_POTION = new Potion(new StatusEffectInstance(JammEffects.DIVINE_RETRIBUTION, 200, 0));
         public static final Potion FREEZE_POTION = new Potion(new StatusEffectInstance(JammEffects.FREEZE, 200, 0));
         public static final Potion RANDOM_TELEPORT_POTION = new Potion(new StatusEffectInstance(JammEffects.RANDOM_TELEPORT));
 
@@ -22,6 +24,7 @@ public class JammPotions {
         }
 
         public static void registerPotions() {
+                register("divine_retribution_potion", DIVINE_RETRIBUTION_POTION);
                 register("freeze_potion", FREEZE_POTION);
                 register("random_teleport_potion", RANDOM_TELEPORT_POTION);
 

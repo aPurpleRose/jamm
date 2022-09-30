@@ -8,13 +8,12 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.scoreboard.ScoreboardCriterion;
-import net.minecraft.stat.Stat;
-import net.minecraft.stat.StatType;
-import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -37,6 +36,7 @@ public class AmethystChestplateArmorItem extends AbstractArmorItem {
                 MATERIAL_TO_EFFECT_MAP = (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance[]>()).put(material, effects).build();
                 EFFECTS = effects;
         }
+
 
         @Override
         public void addMagic(ItemStack item, int magic) {
@@ -100,4 +100,5 @@ public class AmethystChestplateArmorItem extends AbstractArmorItem {
                         }
                 }
         }
+
 }

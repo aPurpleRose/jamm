@@ -8,9 +8,10 @@ import net.minecraft.world.World;
 public class LunarAltarBlockEntity extends AbstractAltarBlockEntity {
 
         private int magic;
-        private static final int reqTicks = 10;
-        private int ticks;
         public static final int MAX_MAGIC = 150;
+        private static final int REQ_TICKS = 40;
+        private int ticks;
+
 
         public LunarAltarBlockEntity(BlockPos pos, BlockState state) {
                 super(JammBlockEntities.LUNAR_ALTAR, pos, state);
@@ -30,21 +31,30 @@ public class LunarAltarBlockEntity extends AbstractAltarBlockEntity {
         }
 
         public static void tick(World world, BlockPos pos, BlockState state, LunarAltarBlockEntity lae) {
+                float multiplier = 1;
+
+                if (world.isNight()) {
+                        multiplier += world.getMoonSize();
+                        multiplier *= 2;
+                }
+
+
                 if (lae.magic < MAX_MAGIC) {
-                        lae.ticks += 1;
-                        if (lae.ticks > reqTicks) {
+                        lae.ticks ++;
+                        if (lae.ticks > (REQ_TICKS/multiplier)) {
                                 lae.ticks = 0;
-                                lae.magic += 1;
+                                lae.magic ++;
                         }
                 }
+
         }
 
         public int getMagic() {
                 return magic;
         }
-        public void removeMagic(int magic1) {
-                magic -= magic1;
-        }
 
+        public void removeMagic(int magic) {
+                this.magic -= magic;
+        }
 
 }
